@@ -1,92 +1,149 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name=“viewport” content=“width=device-width, initial-scale=1" />
-	<title>Number Guesser</title>
-	<link rel="stylesheet" href="styles.css" type="text/css">
-	<link href=“https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap” rel=“stylesheet”>
-</head>
-<body>
-	<header>
-		<h1>NUMBER<span class="header__span">GUESSER</span></h1>
-		<h3 class="header__h3">ULTIMATE CHALLENGER EDITION</h3>
-	</header>
-	<main>
-		<article class="main__article">
-			<section class="article__section--1">
-				<h4>Set Range</h4>
-					<p id="article__section__p--1">Min Range</p>
-					<input type="text" class="section__input" id="section__input--1" name="MinRange">
-					<p id="article__section__p--2">Max Range</p>
-					<input type="text" class="section__input" id="section__input--2" name="MaxRange">
-					<button class="section__button--1" type="button">UPDATE</button>
-			</section>
-			<section class="article__section--2">
-				<p id="article__section--2__p">The Current Range is <span id="min">x</span> to <span id="max">y</span></p>
-				<h4>Challenger 1</h4>
-					<p id="article__section--2__p--2">Name</p>
-					<p id="article__section--2__p--3">Guess</p>
-					<input class="section--2__input--1" type="text">
-					<input class="section--2__input--2" type="text">
-				<h4>Challenger 2</h4>
-					<p id="article__section--2__p--4">Name</p>
-					<p id="article__section--2__p--5">Guess</p>
-					<input class="section--2__input--3" type="text">
-					<input class="section--2__input--4" type="text">
-					<button class="section--2__button--1"type="button">SUBMIT GUESS</button>
-					<button class="section--2__button--2"type="button">RESET GAME</button>
-					<button class="section--2__button--3"type="button">CLEAR GAME</button>
-			</section>
-			<section class="article__section--3">
-				<h4>Latest Score</h4>
-				<h5 class="section--3__h5" id="challenger1">Challenger 1 Name</h5>
-					<p class="section--3__p">current guess</p>
-					<p class="section--3__p--2">97</p>
-					<p class="section--3__p--3"> that's too high</p>
-				<h5 class="section--3__h5" id="challenger2">Challenger 2 Name</h5>
-					<p class="section--3__p">current guess</p>
-					<p class="section--3__p--2">3</p>
-					<p class="section--3__p--3"> that's too low</p>
-			</section>
-		</article>
-		<aside>
-			<section class="aside__section--1">
-				<div class="aside__section__div">
-					<h5 class="aside__div__h5" id="challenger1Scoreboard">Challenger 1 Name</h5>
-					<p id="vs">vs</p>
-					<h5 class="aside__div__h5" id="challenger2Scoreboard">Challenger 2 Name</h5>
-					<h2 class="aside__div__h2" id="challengerWinner">CHALLENGER NAME WIN</h2>
-					<h2 class="aside__div__h2--2">WINNER</h2>
-					<h6 class="aside__div__h6"><span id="totalGuesses">47</span> GUESSES</h6>
-					<h6 class="aside__div__h6"><span id="totalTime">1.35</span> MINUTES</h6>
-				</div>
-			</section>
-			<section class="aside__section--2">
-				<div class="aside__section__div">
-					<h5 class="aside__div__h5" id="challenger1Scoreboard">Challenger 1 Name</h5>
-					<p id="vs">vs</p>
-					<h5 class="aside__div__h5" id="challenger2Scoreboard">Challenger 2 Name</h5>
-					<h2 class="aside__div__h2" id="challengerWinner">CHALLENGER NAME WIN</h2>
-					<h2 class="aside__div__h2--2">WINNER</h2>
-					<h6 class="aside__div__h6"><span id="totalGuesses">47</span> GUESSES</h6>
-					<h6 class="aside__div__h6"><span id="totalTime">1.35</span> MINUTES</h6>
-				</div>
-			</section>
-			<section class="aside__section--3">
-				<div class="aside__section__div">
-					<h5 class="aside__div__h5" id="challenger1Scoreboard">Challenger 1 Name</h5>
-					<p id="vs">vs</p>
-					<h5 class="aside__div__h5" id="challenger2Scoreboard">Challenger 2 Name</h5>
-					<h2 class="aside__div__h2" id="challengerWinner">CHALLENGER NAME WIN</h2>
-					<h2 class="aside__div__h2--2">WINNER</h2>
-					<h6 class="aside__div__h6"><span id="totalGuesses">47</span> GUESSES</h6>
-					<h6 class="aside__div__h6"><span id="totalTime">1.35</span> MINUTES</h6>
-				</div>
-			</section>
-		</aside>
-	</main>
-	<script src="main.js" type="text/javascript" charset="utf-8" async defer></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name=“viewport” content=“width=device-width, initial-scale=1" />
+    <title>Number Guesser</title>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <link
+    href=“https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap”
+    rel=“stylesheet”>
+  </head>
+  <body>
+    <header>
+      <h1>NUMBER<span class="header__span">GUESSER</span></h1>
+      <h3 class="header__h3">ULTIMATE CHALLENGER EDITION</h3>
+    </header>
+    <main>
+      <article class="main__article">
+        <section class="article__section--1">
+          <h4>Set Range</h4>
+          <p id="article__section__p--1">Min Range</p>
+          <input
+            type="text"
+            class="section__input"
+            id="section__input--1"
+            name="MinRange"
+          />
+          <p id="article__section__p--2">Max Range</p>
+          <input
+            type="text"
+            class="section__input"
+            id="section__input--2"
+            name="MaxRange"
+          />
+          <button class="section__button--1" type="button">UPDATE</button>
+        </section>
+        <section class="article__section--2">
+          <p id="article__section--2__p">
+            The Current Range is <span id="min">x</span> to
+            <span id="max">y</span>
+          </p>
+          <h4>Challenger 1</h4>
+          <p id="article__section--2__p--2">Name</p>
+          <p id="article__section--2__p--3">Guess</p>
+          <input class="section--2__input--1" type="text" />
+          <input class="section--2__input--2" type="text" />
+          <h4>Challenger 2</h4>
+          <p id="article__section--2__p--4">Name</p>
+          <p id="article__section--2__p--5">Guess</p>
+          <input class="section--2__input--3" type="text" />
+          <input class="section--2__input--4" type="text" />
+          <button class="section--2__button--1" type="button">
+            SUBMIT GUESS
+          </button>
+          <button class="section--2__button--2" type="button">
+            RESET GAME
+          </button>
+          <button class="section--2__button--3" type="button">
+            CLEAR GAME
+          </button>
+        </section>
+        <section class="article__section--3">
+          <h4>Latest Score</h4>
+          <h5 class="section--3__h5" id="challenger1">Challenger 1 Name</h5>
+          <p class="section--3__p">current guess</p>
+          <p class="section--3__p--2">97</p>
+          <p class="section--3__p--3">that's too high</p>
+          <h5 class="section--3__h5" id="challenger2">Challenger 2 Name</h5>
+          <p class="section--3__p">current guess</p>
+          <p class="section--3__p--2">3</p>
+          <p class="section--3__p--3">that's too low</p>
+        </section>
+      </article>
+      <aside>
+        <section class="aside__section--1">
+          <div class="aside__section__div">
+            <h5 class="aside__div__h5" id="challenger1Scoreboard">
+              Challenger 1 Name
+            </h5>
+            <p id="vs">vs</p>
+            <h5 class="aside__div__h5" id="challenger2Scoreboard">
+              Challenger 2 Name
+            </h5>
+            <h2 class="aside__div__h2" id="challengerWinner">
+              CHALLENGER NAME WIN
+            </h2>
+            <h2 class="aside__div__h2--2">WINNER</h2>
+            <h6 class="aside__div__h6">
+              <span id="totalGuesses">47</span> GUESSES
+            </h6>
+            <h6 class="aside__div__h6">
+              <span id="totalTime">1.35</span> MINUTES
+            </h6>
+          </div>
+        </section>
+        <section class="aside__section--2">
+          <div class="aside__section__div">
+            <h5 class="aside__div__h5" id="challenger1Scoreboard">
+              Challenger 1 Name
+            </h5>
+            <p id="vs">vs</p>
+            <h5 class="aside__div__h5" id="challenger2Scoreboard">
+              Challenger 2 Name
+            </h5>
+            <h2 class="aside__div__h2" id="challengerWinner">
+              CHALLENGER NAME WIN
+            </h2>
+            <h2 class="aside__div__h2--2">WINNER</h2>
+            <h6 class="aside__div__h6">
+              <span id="totalGuesses">47</span> GUESSES
+            </h6>
+            <h6 class="aside__div__h6">
+              <span id="totalTime">1.35</span> MINUTES
+            </h6>
+          </div>
+        </section>
+        <section class="aside__section--3">
+          <div class="aside__section__div">
+            <h5 class="aside__div__h5" id="challenger1Scoreboard">
+              Challenger 1 Name
+            </h5>
+            <p id="vs">vs</p>
+            <h5 class="aside__div__h5" id="challenger2Scoreboard">
+              Challenger 2 Name
+            </h5>
+            <h2 class="aside__div__h2" id="challengerWinner">
+              CHALLENGER NAME WIN
+            </h2>
+            <h2 class="aside__div__h2--2">WINNER</h2>
+            <h6 class="aside__div__h6">
+              <span id="totalGuesses">47</span> GUESSES
+            </h6>
+            <h6 class="aside__div__h6">
+              <span id="totalTime">1.35</span> MINUTES
+            </h6>
+          </div>
+        </section>
+      </aside>
+    </main>
+    <script
+      src="main.js"
+      type="text/javascript"
+      charset="utf-8"
+      async
+      defer
+    ></script>
+  </body>
 </html>

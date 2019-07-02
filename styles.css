@@ -10,16 +10,15 @@ Font-weight:
 Bold = 700
 Light = 300*/
 
-
-*  {
-	font-family: 'Open Sans', sans-serif;
+* {
+  font-family: 'Open Sans', sans-serif;
 }
 
 header {
-	background-color: #404041;
-	color: #DD1972;
+  background-color: #404041;
+  color: #dd1972;
 }
 
 .header__h3 {
-	color: #ffffff;
+  color: #ffffff;
 }
