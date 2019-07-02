@@ -12,53 +12,80 @@ Light = 300*/
 
 * {
   font-family: 'Open Sans', sans-serif;
+	margin: 0;
 }
+
+/*Header - P*/
 
 header {
   background-color: #404041;
   color: #dd1972;
+  padding: 20px 0px;
+  text-align: center;
+}
+
+.header__h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.header__span {
+  font-weight: 300;
 }
 
 .header__h3 {
   color: #ffffff;
+  font-size: 16px;
+  font-weight: 300;
 }
-
-
-/*Header - P*/
-
-
-
 
 /*Main - P*/
 
-
-
-
 /*Article - P*/
 
-
-
+.main__article {
+  font-weight: 300;
+}
 
 /*Section 1 - V*/
 
-
-
-
 /*Section 2 - V*/
-
-
-
 
 /*Section 3 - V*/
 
-
-
-
 /*Aside - P*/
 
-
-
+.aside {
+	background: 
+  font-weight: 700;
+}
 
 /*Section - P*/
 
+.aside__div__h5 {
+	font-weight: 700;
+}
 
+#vs {
+	font-weight: 300;
+}
+
+.aside__div__h2 {
+	font-weight: 700;
+}
+
+.aside__div__h2--2 {
+	font-weight: 300;
+}
+
+#totalGuesses {
+	font-weight: 700;
+}
+
+.aside__div__h6 {
+	font-weight: 300;
+}
+
+#totalTime {
+	font-weight: 700;
+}
