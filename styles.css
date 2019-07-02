@@ -1,0 +1,25 @@
+/*#DD1972
+#F7F7F7 - Left side background
+#404041 - Right side background
+#6E6E6E - Active Button
+#FFFFFF - Button text
+#D0D2D3 - Disabled button
+#F74D9B - Last Guess
+
+Font-weight:
+Bold = 700
+Light = 300*/
+
+
+*  {
+	font-family: 'Open Sans', sans-serif;
+}
+
+header {
+	background-color: #404041;
+	color: #DD1972;
+}
+
+.header__h3 {
+	color: #ffffff;
+}
