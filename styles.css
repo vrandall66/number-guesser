@@ -48,10 +48,59 @@ header {
 }
 
 /*Section 1 - V*/
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #404041;
+	font-weight: 700;
+}
+
+.article__section--1,
+.article__section--2,
+.article__section--3 {
+	color: #404041;
+}
+
+.section__button--1 {
+	background-color: #404041;
+	border-radius: ;
+	color: #FFFFFF;
+	font-weight: 700;
+}
 
 /*Section 2 - V*/
+.section--2__button--1 {
+	background-color: #404041;
+	border-radius: ;
+	color: #FFFFFF;
+	font-weight: 700;
+}
+
+.section--2__button--2 {
+	background-color: #404041;
+	/*background-color: #D0D2D3;*/
+	border-radius: ;
+	color: #FFFFFF;
+	font-weight: 700;
+}
+
+.section--2__button--3 {
+	background-color: #404041;
+	/*background-color: #D0D2D3;*/
+	border-radius: ;
+	color: #FFFFFF;
+	font-weight: 700;
+}
+
+
 
 /*Section 3 - V*/
+.section--3__p--2 {
+	color: #F74D9B;
+	font-weight: 700;
+}
 
 /*Aside - P*/
 
