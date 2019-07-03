@@ -15,11 +15,13 @@ Light = 300*/
 	margin: 0;
 }
 
-/*Header - P*/
+/* Header */
 
 header {
   background-color: #404041;
-  color: #dd1972;
+  color: #DD1972;
+  display: flex;
+  flex-direction: column;
   padding: 20px 0px;
   text-align: center;
 }
@@ -39,102 +41,92 @@ header {
   font-weight: 300;
 }
 
-/*Main - P*/
+/* Main */
 
-/*Article - P*/
-
-.main__article {
-  font-weight: 300;
+main {
+	display: flex;
+	height: 600px;
 }
 
-/*Section 1 - V*/
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* Player Section */
+
+.player__article {
+	display: flex;
+	align-items: center;
+	background-color: #F7F7F7;
+	flex-direction: column;
+ 	font-weight: 300;
+ 	justify-content: space-around;
+}
+
+/* Current Range */
+h3 {
 	color: #404041;
 	font-weight: 700;
 }
 
-.article__section--1,
-.article__section--2,
-.article__section--3 {
+.player__section--setRange,
+.player__section--challengers,
+.player__section--scores {
+	background-color: #ffffff;
 	color: #404041;
 }
 
-.section__button--1 {
+.player__btn {
 	background-color: #404041;
 	border-radius: ;
 	color: #FFFFFF;
 	font-weight: 700;
 }
 
-/*Section 2 - V*/
-.section--2__button--1 {
-	background-color: #404041;
-	border-radius: ;
-	color: #FFFFFF;
-	font-weight: 700;
+/* Players */
+
+
+
+
+/* Latest Score */
+.player__section--scores {
+	display: flex;
 }
 
-.section--2__button--2 {
-	background-color: #404041;
-	/*background-color: #D0D2D3;*/
-	border-radius: ;
-	color: #FFFFFF;
-	font-weight: 700;
+.player1--score,
+.player2--score {
+	display: flex;
+	flex-direction: column;
 }
 
-.section--2__button--3 {
-	background-color: #404041;
-	/*background-color: #D0D2D3;*/
-	border-radius: ;
-	color: #FFFFFF;
-	font-weight: 700;
-}
-
-
-
-/*Section 3 - V*/
-.section--3__p--2 {
+.player__guess1,
+.player__guess2 {
 	color: #F74D9B;
 	font-weight: 700;
 }
 
-/*Aside - P*/
+/* Aside */
 
-.aside {
-	background: 
-  font-weight: 700;
+aside {
+	background: ;
+	display: flex;
+	flex-direction: column;
+ 	font-weight: 700;
 }
 
-/*Section - P*/
+/* Cards */
 
-.aside__div__h5 {
-	font-weight: 700;
+.card__section {
+	display: flex;
+	flex-direction: column;
 }
 
-#vs {
-	font-weight: 300;
+
+.card__challenger--names,
+.card__winner--stats {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
 }
 
-.aside__div__h2 {
-	font-weight: 700;
-}
-
-.aside__div__h2--2 {
-	font-weight: 300;
-}
-
-#totalGuesses {
-	font-weight: 700;
-}
-
-.aside__div__h6 {
-	font-weight: 300;
-}
-
-#totalTime {
-	font-weight: 700;
+.card__winner--name, {
+	display: flex;
+	flex-direction: column;
 }
