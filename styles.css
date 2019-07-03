@@ -5,21 +5,18 @@
 #FFFFFF - Button text
 #D0D2D3 - Disabled button
 #F74D9B - Last Guess
-
-Font-weight:
-Bold = 700
-Light = 300*/
+*/
 
 * {
   font-family: 'Open Sans', sans-serif;
-	margin: 0;
+  margin: 0;
 }
 
 /* Header */
 
 header {
   background-color: #404041;
-  color: #DD1972;
+  color: #dd1972;
   display: flex;
   flex-direction: column;
   padding: 20px 0px;
@@ -44,89 +41,85 @@ header {
 /* Main */
 
 main {
-	display: flex;
-	height: 600px;
+  display: flex;
+  height: 600px;
 }
 
 /* Player Section */
 
 .player__article {
-	display: flex;
-	align-items: center;
-	background-color: #F7F7F7;
-	flex-direction: column;
- 	font-weight: 300;
- 	justify-content: space-around;
+  display: flex;
+  align-items: center;
+  background-color: #f7f7f7;
+  flex-direction: column;
+  font-weight: 300;
+  justify-content: space-around;
 }
 
 /* Current Range */
 h3 {
-	color: #404041;
-	font-weight: 700;
+  color: #404041;
+  font-weight: 700;
 }
 
 .player__section--setRange,
 .player__section--challengers,
 .player__section--scores {
-	background-color: #ffffff;
-	color: #404041;
+  background-color: #ffffff;
+  color: #404041;
 }
 
 .player__btn {
-	background-color: #404041;
-	border-radius: ;
-	color: #FFFFFF;
-	font-weight: 700;
+  background-color: #404041;
+  border-radius: ;
+  color: #ffffff;
+  font-weight: 700;
 }
 
 /* Players */
 
-
-
-
 /* Latest Score */
 .player__section--scores {
-	display: flex;
+  display: flex;
 }
 
 .player1--score,
 .player2--score {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .player__guess1,
 .player__guess2 {
-	color: #F74D9B;
-	font-weight: 700;
+  color: #f74d9b;
+  font-weight: 700;
 }
 
 /* Aside */
 
 aside {
-	background: ;
-	display: flex;
-	flex-direction: column;
- 	font-weight: 700;
+  background: ;
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
 }
 
 /* Cards */
 
 .card__section {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-
 
 .card__challenger--names,
 .card__winner--stats {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.card__winner--name, {
-	display: flex;
-	flex-direction: column;
+.card__winner--name {
+  display: flex;
+  flex-direction: column;
 }
