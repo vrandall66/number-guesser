@@ -76,10 +76,13 @@ h3 {
   font-weight: 700;
 }
 
+.player__btn--disabled {
+  background-color: #d0d2d3;
+}
+
 .player__section--titles {
   font-weight: 700;
 }
-
 
 /* Players */
 
