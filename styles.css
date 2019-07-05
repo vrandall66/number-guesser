@@ -66,15 +66,20 @@ h3 {
 .player__section--challengers,
 .player__section--scores {
   background-color: #ffffff;
-  color: #404041;
-}
+  color: #404041;}
 
 .player__btn {
-  background-color: #404041;
-  border-radius: ;
+  background-color: #6e6e6e;
+  border: 3px solid #6e6e6e;
+  border-radius: 10px;
   color: #ffffff;
   font-weight: 700;
 }
+
+.player__section--titles {
+  font-weight: 700;
+}
+
 
 /* Players */
 
@@ -92,6 +97,7 @@ h3 {
 .player__guess1,
 .player__guess2 {
   color: #f74d9b;
+  font-size: 400%;
   font-weight: 700;
 }
 
