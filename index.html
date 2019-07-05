@@ -40,30 +40,38 @@
             <span class="current-range max">y</span>
           </p>
           <p class="player__section--titles">Challenger 1</p>
-          <label class="player__label" for="name1"
-            >Name <input type="text" class="player__input--name1" name="name1"
-          /></label>
-          <label class="player__label" for="guess1"
-            >Guess
-            <input type="number" class="player__input--guess1" name="guess1"
-          /></label>
+          <div class="double-input">
+            <div class="stack-label-input">
+              <label class="player__label" for="name1">Name</label>
+              <input type="text" class="player__input--name1" id="name1" />
+            </div>
+            <div class="stack-label-input">
+              <label class="player__label" for="guess1">Guess</label>
+              <input type="number" class="player__input--guess1" id="guess1" />
+            </div>
+          </div>
           <p class="player__section--titles">Challenger 2</p>
-          <label class="player__label" for="name2"
-            >Name <input type="text" class="player__input--name2" name="name2"
-          /></label>
-          <label class="player__label" for="guess2"
-            >Guess
-            <input type="number" class="player__input--guess2" name="guess2"
-          /></label>
-          <button class="player__btn submit__btn" type="button">
-            SUBMIT GUESS
-          </button>
-          <button class="player__btn reset__btn" type="button">
-            RESET GAME
-          </button>
-          <button class="player__btn clear__btn" type="button">
-            CLEAR GAME
-          </button>
+          <div class="double-input">
+            <div class="stack-label-input">
+              <label class="player__label" for="name2">Name</label>
+              <input type="text" class="player__input--name2" id="name2" />
+            </div>
+            <div class="stack-label-input">
+              <label class="player__label" for="guess2">Guess</label>
+              <input type="number" class="player__input--guess2" id="guess2" />
+            </div>
+          </div>
+          <div class="three-buttons">
+            <button class="player__btn submit__btn" type="button">
+              SUBMIT GUESS
+            </button>
+            <button class="player__btn reset__btn" type="button">
+              RESET GAME
+            </button>
+            <button class="player__btn clear__btn" type="button">
+              CLEAR GAME
+            </button>
+          </div>
         </section>
         <section class="player__section--scores">
           <p class="player__section--titles">Latest Score</p>
