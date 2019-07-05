@@ -42,18 +42,20 @@ header {
 
 main {
   display: flex;
-  height: 600px;
+  width: 100%;
+  /* height: 600px; */
 }
 
 /* Player Section */
 
 .player__article {
   display: flex;
-  align-items: center;
   background-color: #f7f7f7;
   flex-direction: column;
   font-weight: 300;
-  justify-content: space-around;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%;
 }
 
 /* Current Range */
@@ -65,8 +67,15 @@ h3 {
 .player__section--setRange,
 .player__section--challengers,
 .player__section--scores {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin-bottom: 30px;
+  border: 3px solid #d0d2d3;
   background-color: #ffffff;
-  color: #404041;}
+  color: #404041;
+}
 
 .player__btn {
   background-color: #6e6e6e;
@@ -78,10 +87,12 @@ h3 {
 
 .player__btn--disabled {
   background-color: #d0d2d3;
+  border: 3px solid #d0d2d3;
 }
 
 .player__section--titles {
   font-weight: 700;
+  display: flex;
 }
 
 /* Players */
@@ -111,6 +122,7 @@ aside {
   display: flex;
   flex-direction: column;
   font-weight: 700;
+  width: 50%;
 }
 
 /* Cards */
