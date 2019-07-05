@@ -48,6 +48,15 @@ main {
 
 /* Player Section */
 
+.double-input {
+  display: flex;
+}
+
+.stack-label-input {
+  display: flex;
+  flex-direction: column;
+}
+
 .player__article {
   display: flex;
   background-color: #f7f7f7;
@@ -56,6 +65,7 @@ main {
   justify-content: flex-start;
   align-items: center;
   width: 50%;
+  padding: 40px;
 }
 
 /* Current Range */
@@ -69,8 +79,8 @@ h3 {
 .player__section--scores {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 90%;
+  padding: 20px;
+  width: 100%;
   margin-bottom: 30px;
   border: 3px solid #d0d2d3;
   background-color: #ffffff;
@@ -88,6 +98,12 @@ h3 {
 .player__btn--disabled {
   background-color: #d0d2d3;
   border: 3px solid #d0d2d3;
+}
+
+.three-buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .player__section--titles {
