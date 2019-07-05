@@ -22,15 +22,19 @@
         <input type="hidden" class="hidden-number" />
         <section class="player__section--setRange">
           <p class="player__section--titles">Set Range</p>
-          <div class="test">
+         <div class="double-input">
+          <div class="stack-label-input">
             <label class="player__label" for="minRange"
-              >Min Range
+              >Min Range</label>
               <input type="number" class="player__input--min" name="minRange"
-            /></label>
+            />
+          </div>
+          <div class="stack-label-input">
             <label class="player__label" for="maxRange"
-              >Max Range
+              >Max Range</label>
               <input type="number" class="player__input--max" name="maxRange"
-            /></label>
+            />
+          </div>
             <button class="player__btn update__btn">UPDATE</button>
           </div>
         </section>
@@ -75,6 +79,7 @@
         </section>
         <section class="player__section--scores">
           <p class="player__section--titles">Latest Score</p>
+          <div class="side-by-side-score">
           <div class="player1--score">
             <p class="player__name1">Challenger 1 Name</p>
             <p class="player__currentguess1">current guess</p>
@@ -87,6 +92,7 @@
             <p class="player__guess2">Challenger 2 Guess</p>
             <p class="player__verdict2">TOO HIGH/LOW</p>
           </div>
+        </div>
         </section>
       </article>
       <aside>
