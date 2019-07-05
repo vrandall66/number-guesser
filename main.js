@@ -56,7 +56,13 @@ clearBtn.addEventListener('click', clearGame);
 minRange.addEventListener('input', checkToDisableClearBtn);
 maxRange.addEventListener('input', checkToDisableClearBtn);
 
-guessInput1.addEventListener('input', checkToDisableClearBtn);
+guessInput1.addEventListener('input', function() {
+  checkToDisableClearBtn();
+  // checkRange()
+});
+
+// guessInput1.addEventListener('onkeypress', checkRange);
+
 guessInput2.addEventListener('input', checkToDisableClearBtn);
 nameInput1.addEventListener('input', checkToDisableClearBtn);
 nameInput2.addEventListener('input', checkToDisableClearBtn);
@@ -179,6 +185,17 @@ function checkAndCompare2() {
     verdict2.innerText = 'BOOM!';
   }
 }
+
+// function checkRange() {
+//   var minInput = parseInt(minRange.value);
+//   var maxInput = parseInt(maxRange.value);
+//   var value1 = parseInt(guessInput1.value);
+//   var value2 = parseInt(guessInput2.value);
+//   if (value1 < minInput) || (value2 < minInput) {
+//     console.log(value1);
+//   } else if (value1 > maxInput) || (value2 > maxInput) {
+
+// }
 
 // Run this on page load -- temporary solution
 checkToDisableClearBtn();
