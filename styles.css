@@ -50,6 +50,8 @@ main {
 
 .double-input {
   display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .stack-label-input {
@@ -67,6 +69,7 @@ main {
   width: 50%;
   padding: 40px;
 }
+
 
 /* Current Range */
 h3 {
@@ -93,6 +96,7 @@ h3 {
   border-radius: 10px;
   color: #ffffff;
   font-weight: 700;
+  height: 2em;
 }
 
 .player__btn--disabled {
@@ -118,6 +122,10 @@ h3 {
   display: flex;
 }
 
+.side-by-side-score {
+  display: flex;
+}
+
 .player1--score,
 .player2--score {
   display: flex;
@@ -134,18 +142,25 @@ h3 {
 /* Aside */
 
 aside {
-  background: ;
+  background-color: #d0d2d3;
+  color: #404041;
   display: flex;
   flex-direction: column;
   font-weight: 700;
+  padding: 40px;
   width: 50%;
 }
 
 /* Cards */
 
 .card__section {
+  background-color: #ffffff;
+  border: 3px solid #404041;
+  color: #404041;
   display: flex;
   flex-direction: column;
+  margin-bottom: 30px;
+  padding: 40px;
 }
 
 .card__challenger--names,
@@ -156,7 +171,10 @@ aside {
   align-items: center;
 }
 
-.card__winner--name {
+
+.card__winner--name,
+.card__winner--text {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
