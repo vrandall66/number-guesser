@@ -68,7 +68,7 @@ nameInput1.addEventListener('input', checkToDisableClearBtn);
 nameInput2.addEventListener('input', checkToDisableClearBtn);
 
 // This function takes user range input and updates the current range
-function updateRange() {
+function updateRange(min, max) {
   var minValue = minRange.value;
   var maxValue = maxRange.value;
   min.innerText = minValue;
@@ -227,4 +227,49 @@ checkToDisableResetBtn();
 
 // inputName.oninvalid = function(event) {
 //   event.target.setCustomValidity('invalid');
+
+
+// window.addEventListener('keydown', displayWinner);
+// element.insertAdjacentHTML(position, text);
+
+function displayWinner(e) {
+  if (e.keyCode == 13) {
+  var winnerBoard = document.querySelector('aside');
+  var cardHTML = `<section class="card__section"><div class="card__challenger--names"><p class="card__name1" id="challenger1Scoreboard">${nameInput1.value}</p><p class="vs">vs</p><p class="card__name2" id="challenger2Scoreboard">${nameInput2.value}</p></div><div class="card__winner--names"><p class="card__winner--name">CHALLENGER NAME WIN</p><p class="card__winner--text">WINNER</p></div><div class="card__winner--stats"><p class="card__game--stats"><span class="total-guesses">47</span> GUESSES</p><p class="card--game-time"><span class="total-time">1.35</span> MINUTES</p></div></section>`
+  winnerBoard.insertAdjacentHTML('afterbegin', cardHTML);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // };

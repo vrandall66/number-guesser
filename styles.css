@@ -8,6 +8,7 @@
 */
 
 * {
+  box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
   margin: 0;
 }
@@ -19,13 +20,14 @@ header {
   color: #dd1972;
   display: flex;
   flex-direction: column;
-  padding: 20px 0px;
+  padding: 1rem;
   text-align: center;
 }
 
 .header__h1 {
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 4.5rem;
+  font-weight: 800;
+  margin: -3rem, 0;
 }
 
 .header__span {
@@ -34,7 +36,7 @@ header {
 
 .header__h3 {
   color: #ffffff;
-  font-size: 16px;
+  font-size: 1.5rem;
   font-weight: 300;
 }
 
@@ -43,14 +45,21 @@ header {
 main {
   display: flex;
   width: 100%;
-  /* height: 600px; */
 }
 
 /* Player Section */
 
+.player__input--min,
+.player__input--max {
+  height: 35px;
+  margin-bottom: 20px;
+}
+
 .double-input {
   display: flex;
   justify-content: space-between;
+  margin: .25em 0;
+  padding: ;
   width: 100%;
 }
 
@@ -62,12 +71,13 @@ main {
 .player__article {
   display: flex;
   background-color: #f7f7f7;
+  border-right: 1.5px solid #aaaaaa;
   flex-direction: column;
   font-weight: 300;
   justify-content: flex-start;
   align-items: center;
   width: 50%;
-  padding: 40px;
+  padding: 20px;
 }
 
 
@@ -82,43 +92,57 @@ h3 {
 .player__section--scores {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 0 20px;
   width: 100%;
-  margin-bottom: 30px;
-  border: 3px solid #d0d2d3;
+  margin-bottom: 20px;
+  border: 2px solid #d0d2d3;
   background-color: #ffffff;
   color: #404041;
 }
 
 .player__btn {
   background-color: #6e6e6e;
-  border: 3px solid #6e6e6e;
-  border-radius: 10px;
+  border: 2px solid #6e6e6e;
+  border-radius: 180px;
   color: #ffffff;
+  font-size: 100%;
   font-weight: 700;
-  height: 2em;
+  height: 2.25em;
+  margin: 10px;
+  padding: 4px 20px;
 }
 
 .player__btn--disabled {
   background-color: #d0d2d3;
-  border: 3px solid #d0d2d3;
+  border: 2px solid #d0d2d3;
+}
+
+.player__input--name1,
+.player__input--name2,
+.player__input--guess1,
+.player__input--guess2 {
+  height: 35px;
 }
 
 .three-buttons {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .player__section--titles {
-  font-weight: 700;
+  font-weight: 800;
+  font-size: 125%;
   display: flex;
+  margin: .25rem 0;
 }
 
 /* Players */
 
 /* Latest Score */
 .player__section--scores {
+  border-left: 1.5px solid #aaaaaa;
   display: flex;
 }
 
@@ -136,7 +160,7 @@ h3 {
 .player__guess2 {
   color: #f74d9b;
   font-size: 400%;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 /* Aside */
@@ -146,8 +170,7 @@ aside {
   color: #404041;
   display: flex;
   flex-direction: column;
-  font-weight: 700;
-  padding: 40px;
+  padding: 20px 40px;
   width: 50%;
 }
 
@@ -155,12 +178,19 @@ aside {
 
 .card__section {
   background-color: #ffffff;
-  border: 3px solid #404041;
-  color: #404041;
+  border: 2px solid #aaaaaa;
+  color: #6e6e6e;
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
-  padding: 40px;
+  padding: 10px 40px;
+}
+
+.card__name1,
+.card__name2 {
+  font-size: 115%;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .card__challenger--names,
@@ -177,4 +207,9 @@ aside {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 200%;
+}
+
+.card__winner--text {
+  font-weight: 300;
 }
