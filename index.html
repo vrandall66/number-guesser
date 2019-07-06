@@ -6,7 +6,10 @@
     <meta name=“viewport” content=“width=device-width, initial-scale=1" />
     <title>Number Guesser</title>
     <link rel="stylesheet" href="styles.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
@@ -20,19 +23,15 @@
         <input type="hidden" class="hidden-number" />
         <section class="player__section--setRange">
           <p class="player__section--titles">Set Range</p>
-         <div class="double-input">
-          <div class="stack-label-input">
-            <label class="player__label" for="minRange"
-              >Min Range</label>
-              <input type="number" class="player__input--min" name="minRange"
-            />
-          </div>
-          <div class="stack-label-input">
-            <label class="player__label" for="maxRange"
-              >Max Range</label>
-              <input type="number" class="player__input--max" name="maxRange"
-            />
-          </div>
+          <div class="double-input">
+            <div class="stack-label-input">
+              <label class="player__label" for="minRange">Min Range</label>
+              <input type="number" class="player__input--min" name="minRange" />
+            </div>
+            <div class="stack-label-input">
+              <label class="player__label" for="maxRange">Max Range</label>
+              <input type="number" class="player__input--max" name="maxRange" />
+            </div>
             <button class="player__btn update__btn">UPDATE</button>
           </div>
         </section>
@@ -78,19 +77,19 @@
         <section class="player__section--scores">
           <p class="player__section--titles">Latest Score</p>
           <div class="side-by-side-score">
-          <div class="player1--score">
-            <p class="player__name1">Challenger 1 Name</p>
-            <p class="player__currentguess1">current guess</p>
-            <p class="player__guess1">Challenger 1 Guess</p>
-            <p class="player__verdict1">TOO HIGH/LOW</p>
+            <div class="player1--score">
+              <p class="player__name1">Challenger 1 Name</p>
+              <p class="player__currentguess1">current guess</p>
+              <p class="player__guess1">Challenger 1 Guess</p>
+              <p class="player__verdict1">TOO HIGH/LOW</p>
+            </div>
+            <div class="player2--score">
+              <p class="player__name2">Challenger 2 Name</p>
+              <p class="player__currentguess2">current guess</p>
+              <p class="player__guess2">Challenger 2 Guess</p>
+              <p class="player__verdict2">TOO HIGH/LOW</p>
+            </div>
           </div>
-          <div class="player2--score">
-            <p class="player__name2">Challenger 2 Name</p>
-            <p class="player__currentguess2">current guess</p>
-            <p class="player__guess2">Challenger 2 Guess</p>
-            <p class="player__verdict2">TOO HIGH/LOW</p>
-          </div>
-        </div>
         </section>
       </article>
       <aside>

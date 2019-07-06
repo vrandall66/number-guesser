@@ -58,7 +58,7 @@ main {
 .double-input {
   display: flex;
   justify-content: space-between;
-  margin: .25em 0;
+  margin: 0.25em 0;
   padding: ;
   width: 100%;
 }
@@ -79,7 +79,6 @@ main {
   width: 50%;
   padding: 20px;
 }
-
 
 /* Current Range */
 h3 {
@@ -135,7 +134,7 @@ h3 {
   font-weight: 800;
   font-size: 125%;
   display: flex;
-  margin: .25rem 0;
+  margin: 0.25rem 0;
 }
 
 /* Players */
@@ -200,7 +199,6 @@ aside {
   justify-content: space-around;
   align-items: center;
 }
-
 
 .card__winner--name,
 .card__winner--text {

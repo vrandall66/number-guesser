@@ -1,7 +1,6 @@
 // Math.floor(Math.random() * 100) + 1;
+var randomNumb = 0;
 
-// Random Number Generation 1 - 100
-// IN TESTING PHASE RIGHT NOW
 function randomNumber() {
   var randomTarget = Math.floor(Math.random() * 100) + 1;
   var random = document.querySelector('.hidden-number');
@@ -9,11 +8,15 @@ function randomNumber() {
   console.log(randomTarget);
   console.log(random.value);
   var random = randomTarget;
-  return random;
+  randomNumb = randomTarget;
 }
 
 randomNumber();
-console.log(document.querySelector('.hidden-number'));
+console.log(randomNumb);
+
+// function randomNum(min, max) {
+
+// }
 
 // Buttons
 var updateBtn = document.querySelector('.update__btn');
@@ -175,7 +178,8 @@ function checkAndCompare1() {
     verdict1.innerText = "That's too low";
   } else {
     verdict1.innerText = 'BOOM!';
-    passInfoToCard();
+    // passInfoToCard();
+    displayWinner();
   }
 }
 
@@ -188,22 +192,12 @@ function checkAndCompare2() {
     verdict2.innerText = "That's too low";
   } else {
     verdict2.innerText = 'BOOM!';
-    passInfoToCard();
+    // passInfoToCard();
+    displayWinner();
   }
 }
 
-// function checkRange() {
-//   var minInput = parseInt(minRange.value);
-//   var maxInput = parseInt(maxRange.value);
-//   var value1 = parseInt(guessInput1.value);
-//   var value2 = parseInt(guessInput2.value);
-//   if (value1 < minInput) || (value2 < minInput) {
-//     console.log(value1);
-//   } else if (value1 > maxInput) || (value2 > maxInput) {
-
-// }
-
-// Run this on page load -- temporary solution
+// Run this on page load
 checkToDisableClearBtn();
 checkToDisableResetBtn();
 
@@ -222,46 +216,28 @@ function passInfoToCard() {
   }
 }
 
-//     minRange.value == '' &&
-//     maxRange.value == '' &&
-//     nameInput1.value == '' &&
-//     nameInput2.value == '' &&
-//     guessInput1.value == '' &&
-//     guessInput2.value == ''
-//   ) {
-//     clearBtn.disabled = true;
-//     clearBtn.classList.add('player__btn--disabled');
-//   } else {
-//     clearBtn.disabled = false;
-//   }
-// }
-
-// var allInputs = document.getElementsByTagName('input');
-// for (i = 0; i < allInputs.length; i++) {
-//   console.log(allInputs);
-// }
-
-// Input validation alphanumeric -- work in progress
-
-// var inputName = document.querySelector('.player__input--name1');
-// console.log(inputName);
-
-// inputName.oninvalid = function(event) {
-//   event.target.setCustomValidity('invalid');
-
-window.addEventListener('keydown', displayWinner);
+// window.addEventListener('keydown', displayWinner);
 // element.insertAdjacentHTML(position, text);
 
-function displayWinner(e) {
-  if (e.keyCode == 13) {
-    var winnerBoard = document.querySelector('aside');
-    var cardHTML = `<section class="card__section"><div class="card__challenger--names"><p class="card__name1" id="challenger1Scoreboard">${
-      nameInput1.value
-    }</p><p class="vs">vs</p><p class="card__name2" id="challenger2Scoreboard">${
-      nameInput2.value
-    }</p></div><div class="card__winner--names"><p class="card__winner--name">CHALLENGER NAME WIN</p><p class="card__winner--text">WINNER</p></div><div class="card__winner--stats"><p class="card__game--stats"><span class="total-guesses">47</span> GUESSES</p><p class="card--game-time"><span class="total-time">1.35</span> MINUTES</p></div></section>`;
-    winnerBoard.insertAdjacentHTML('afterbegin', cardHTML);
+function displayWinner() {
+  // if (e.keyCode == 13) {
+  var winnerBoard = document.querySelector('aside');
+  var cardHTML = `<section class="card__section"><div class="card__challenger--names"><p class="card__name1" id="challenger1Scoreboard">${
+    scorecardName1.innerText
+  }</p><p class="vs">vs</p><p class="card__name2" id="challenger2Scoreboard">${
+    scorecardName2.innerText
+  }</p></div><div class="card__winner--names"><p class="card__winner--name"></p><p class="card__winner--text">WINNER</p></div><div class="card__winner--stats"><p class="card__game--stats"><span class="total-guesses">47</span> GUESSES</p><p class="card--game-time"><span class="total-time">1.35</span> MINUTES</p></div></section>`;
+  winnerBoard.insertAdjacentHTML('afterbegin', cardHTML);
+
+  var name1 = scorecardName1.innerText;
+  var name2 = scorecardName2.innerText;
+  if (verdict1.innerText == 'BOOM!') {
+    appendCardNameWinner.innerText = name1;
+  } else if (verdict2.innerText == 'BOOM!') {
+    appendCardNameWinner.innerText = name2;
   }
+
+  // }
 }
 
 // };
