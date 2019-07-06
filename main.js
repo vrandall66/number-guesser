@@ -40,6 +40,10 @@ var scorecardName2 = document.querySelector('.player__name2');
 var verdict1 = document.querySelector('.player__verdict1');
 var verdict2 = document.querySelector('.player__verdict2');
 
+var appendCardName1 = document.querySelector('.card__name1');
+var appendCardName2 = document.querySelector('.card__name2');
+var appendCardNameWinner = document.querySelector('.card__winner--name');
+
 updateBtn.addEventListener('click', updateRange);
 submitBtn.addEventListener('click', function() {
   submitGuess();
@@ -56,7 +60,13 @@ clearBtn.addEventListener('click', clearGame);
 minRange.addEventListener('input', checkToDisableClearBtn);
 maxRange.addEventListener('input', checkToDisableClearBtn);
 
-guessInput1.addEventListener('input', checkToDisableClearBtn);
+guessInput1.addEventListener('input', function() {
+  checkToDisableClearBtn();
+  // checkRange();
+});
+
+// guessInput1.addEventListener('onkeypress', checkRange);
+
 guessInput2.addEventListener('input', checkToDisableClearBtn);
 nameInput1.addEventListener('input', checkToDisableClearBtn);
 nameInput2.addEventListener('input', checkToDisableClearBtn);
@@ -163,8 +173,9 @@ function checkAndCompare1() {
     verdict1.innerText = "That's too high";
   } else if (value1 < hiddenNumber) {
     verdict1.innerText = "That's too low";
-  } else {
+  } else if (value1 == hiddenNumber) {
     verdict1.innerText = 'BOOM!';
+    passInfoToCard();
   }
 }
 
@@ -175,10 +186,37 @@ function checkAndCompare2() {
     verdict2.innerText = "That's too high";
   } else if (value2 < hiddenNumber) {
     verdict2.innerText = "That's too low";
-  } else {
+  } else if (value2 == hiddenNumber) {
     verdict2.innerText = 'BOOM!';
+    passInfoToCard();
   }
 }
+
+// pass info to card once there is a winner!
+function passInfoToCard() {
+  var name1 = scorecardName1.innerText;
+  var name2 = scorecardName2.innerText;
+  if (verdict1.innerText == 'BOOM!') {
+    appendCardName1.innerText = name1;
+    appendCardName2.innerText = name2;
+    appendCardNameWinner.innerText = name1;
+  } else if (verdict2.innerText == 'BOOM!') {
+    appendCardName1.innerText = name1;
+    appendCardName2.innerText = name2;
+    appendCardNameWinner.innerText = name2;
+  }
+}
+
+// function checkRange() {
+//   var minInput = parseInt(minRange.value);
+//   var maxInput = parseInt(maxRange.value);
+//   var value1 = parseInt(guessInput1.value);
+//   var value2 = parseInt(guessInput2.value);
+//   if (value1 < minInput) || (value2 < minInput) {
+//     console.log(value1);
+//   } else if (value1 > maxInput) || (value2 > maxInput) {
+
+// }
 
 // Run this on page load -- temporary solution
 checkToDisableClearBtn();
