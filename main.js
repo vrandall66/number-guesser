@@ -68,7 +68,7 @@ nameInput1.addEventListener('input', checkToDisableClearBtn);
 nameInput2.addEventListener('input', checkToDisableClearBtn);
 
 // This function takes user range input and updates the current range
-function updateRange(min, max) {
+function updateRange() {
   var minValue = minRange.value;
   var maxValue = maxRange.value;
   min.innerText = minValue;
@@ -229,7 +229,7 @@ checkToDisableResetBtn();
 //   event.target.setCustomValidity('invalid');
 
 
-// window.addEventListener('keydown', displayWinner);
+window.addEventListener('keydown', displayWinner);
 // element.insertAdjacentHTML(position, text);
 
 function displayWinner(e) {
