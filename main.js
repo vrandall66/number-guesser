@@ -40,6 +40,10 @@ var scorecardName2 = document.querySelector('.player__name2');
 var verdict1 = document.querySelector('.player__verdict1');
 var verdict2 = document.querySelector('.player__verdict2');
 
+var appendCardName1 = document.querySelector('.card__name1');
+var appendCardName2 = document.querySelector('.card__name2');
+var appendCardNameWinner = document.querySelector('.card__winner--name');
+
 updateBtn.addEventListener('click', updateRange);
 submitBtn.addEventListener('click', function() {
   submitGuess();
@@ -171,6 +175,7 @@ function checkAndCompare1() {
     verdict1.innerText = "That's too low";
   } else {
     verdict1.innerText = 'BOOM!';
+    passInfoToCard();
   }
 }
 
@@ -183,6 +188,7 @@ function checkAndCompare2() {
     verdict2.innerText = "That's too low";
   } else {
     verdict2.innerText = 'BOOM!';
+    passInfoToCard();
   }
 }
 
@@ -200,6 +206,21 @@ function checkAndCompare2() {
 // Run this on page load -- temporary solution
 checkToDisableClearBtn();
 checkToDisableResetBtn();
+
+// pass info to card once there is a winner!
+function passInfoToCard() {
+  var name1 = scorecardName1.innerText;
+  var name2 = scorecardName2.innerText;
+  if (verdict1.innerText == 'BOOM!') {
+    appendCardName1.innerText = name1;
+    appendCardName2.innerText = name2;
+    appendCardNameWinner.innerText = name1;
+  } else if (verdict2.innerText == 'BOOM!') {
+    appendCardName1.innerText = name1;
+    appendCardName2.innerText = name2;
+    appendCardNameWinner.innerText = name2;
+  }
+}
 
 //     minRange.value == '' &&
 //     maxRange.value == '' &&
@@ -228,48 +249,19 @@ checkToDisableResetBtn();
 // inputName.oninvalid = function(event) {
 //   event.target.setCustomValidity('invalid');
 
-
 window.addEventListener('keydown', displayWinner);
 // element.insertAdjacentHTML(position, text);
 
 function displayWinner(e) {
   if (e.keyCode == 13) {
-  var winnerBoard = document.querySelector('aside');
-  var cardHTML = `<section class="card__section"><div class="card__challenger--names"><p class="card__name1" id="challenger1Scoreboard">${nameInput1.value}</p><p class="vs">vs</p><p class="card__name2" id="challenger2Scoreboard">${nameInput2.value}</p></div><div class="card__winner--names"><p class="card__winner--name">CHALLENGER NAME WIN</p><p class="card__winner--text">WINNER</p></div><div class="card__winner--stats"><p class="card__game--stats"><span class="total-guesses">47</span> GUESSES</p><p class="card--game-time"><span class="total-time">1.35</span> MINUTES</p></div></section>`
-  winnerBoard.insertAdjacentHTML('afterbegin', cardHTML);
+    var winnerBoard = document.querySelector('aside');
+    var cardHTML = `<section class="card__section"><div class="card__challenger--names"><p class="card__name1" id="challenger1Scoreboard">${
+      nameInput1.value
+    }</p><p class="vs">vs</p><p class="card__name2" id="challenger2Scoreboard">${
+      nameInput2.value
+    }</p></div><div class="card__winner--names"><p class="card__winner--name">CHALLENGER NAME WIN</p><p class="card__winner--text">WINNER</p></div><div class="card__winner--stats"><p class="card__game--stats"><span class="total-guesses">47</span> GUESSES</p><p class="card--game-time"><span class="total-time">1.35</span> MINUTES</p></div></section>`;
+    winnerBoard.insertAdjacentHTML('afterbegin', cardHTML);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // };
