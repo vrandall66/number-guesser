@@ -82,13 +82,18 @@ main {
 .player__input--guess2 {
   height: 35px;
   margin-bottom: 20px;
-  width: 200px;
+  width: 150%;
 }
 
 .double-input {
   display: flex;
   justify-content: space-between;
   margin: 0.25em 0;
+  padding: ;
+  width: 87%;
+}
+
+.set-range {
   width: 100%;
 }
 
@@ -168,8 +173,10 @@ h3:after {
 .player__input--name1,
 .player__input--name2 {
   height: 35px;
-  margin-bottom: 20px;
-  width: 400px;
+
+  margin: 0 20px 20px 0;
+  width: 200%;
+
 }
 
 .three-buttons {
@@ -181,9 +188,11 @@ h3:after {
 
 .player__section--titles {
   font-weight: 800;
-  font-size: 125%;
+
+  font-size: 150%;
   display: flex;
   margin: 0.25rem 0;
+  padding: 10px 0;
 }
 
 /* Players */
@@ -200,11 +209,10 @@ h3:after {
   justify-content: center;
 }
 
-/* can comment out the whole thing except flex, same look */
 .empty {
   display: flex;
-  /* width: 100%;*/
-  /* justify-content: center:
+/*width: 100%;*/
+/*justify-content: center:
   align-items: center;
   text-align: center; */
 }
@@ -289,7 +297,7 @@ aside {
 .card__winner--name {
   font-weight: 800;
   padding-top: 25px;
-}
+} 
 
 .card__winner--text {
   font-weight: 300;
@@ -312,3 +320,4 @@ aside {
   justify-content: flex-end;
   padding: 0 9px 2px 9px;
 }
+

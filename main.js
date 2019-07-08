@@ -20,6 +20,7 @@ var p2 = document.querySelector('.player__name2');
 var verdict1 = document.querySelector('.player__verdict1');
 var verdict2 = document.querySelector('.player__verdict2');
 
+
 // Buttons
 var updateBtn = document.querySelector('.update__btn');
 var submitBtn = document.querySelector('.submit__btn');
@@ -32,6 +33,7 @@ updateBtn.addEventListener('click', function() {
   generateMagicNumber();
   updateRangeText();
 });
+
 submitBtn.addEventListener('click', function() {
   submitGuess();
   checkAndCompare1();
@@ -189,7 +191,7 @@ function checkAndCompare2() {
   } else if (guessValue2 < randomTarget) {
     verdict2.innerText = "That's too low";
   } else {
-    verdict2.innerText = 'BOOM!';
+    verdict2.innerText = 'BOOM!';r
     displayWinner();
   }
 }
