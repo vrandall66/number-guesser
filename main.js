@@ -1,19 +1,25 @@
-// Math.floor(Math.random() * 100) + 1;
+// Global Variables
 
-// Random Number Generation 1 - 100
-// IN TESTING PHASE RIGHT NOW
-function randomNumber() {
-  var randomTarget = Math.floor(Math.random() * 100) + 1;
-  var random = document.querySelector('.hidden-number');
-  random.value = randomTarget;
-  console.log(randomTarget);
-  console.log(random.value);
-  var random = randomTarget;
-  return random;
-}
+var randomTarget;
+var minimum;
+var maximum;
+var countRounds = 0;
 
-randomNumber();
-console.log(document.querySelector('.hidden-number'));
+// Other Global Variables
+var minRange = document.querySelector('.player__input--min');
+var maxRange = document.querySelector('.player__input--max');
+var min = document.querySelector('.min');
+var max = document.querySelector('.max');
+var guessp1 = document.querySelector('.player__input--guess1');
+var guessp2 = document.querySelector('.player__input--guess2');
+var g1 = document.querySelector('.player__guess1');
+var g2 = document.querySelector('.player__guess2');
+var player1 = document.querySelector('.player__input--name1');
+var player2 = document.querySelector('.player__input--name2');
+var p1 = document.querySelector('.player__name1');
+var p2 = document.querySelector('.player__name2');
+var verdict1 = document.querySelector('.player__verdict1');
+var verdict2 = document.querySelector('.player__verdict2');
 
 // Buttons
 var updateBtn = document.querySelector('.update__btn');
@@ -21,30 +27,12 @@ var submitBtn = document.querySelector('.submit__btn');
 var resetBtn = document.querySelector('.reset__btn');
 var clearBtn = document.querySelector('.clear__btn');
 
-// Other variables
-var hiddenNumberX = document.querySelector('.hidden-number');
+// Event Listeners
 
-var minRange = document.querySelector('.player__input--min');
-var maxRange = document.querySelector('.player__input--max');
-var min = document.querySelector('.min');
-var max = document.querySelector('.max');
-var guessInput1 = document.querySelector('.player__input--guess1');
-var guessInput2 = document.querySelector('.player__input--guess2');
-var guess1 = document.querySelector('.player__guess1');
-var guess2 = document.querySelector('.player__guess2');
-var nameInput1 = document.querySelector('.player__input--name1');
-var nameInput2 = document.querySelector('.player__input--name2');
-var scorecardName1 = document.querySelector('.player__name1');
-var scorecardName2 = document.querySelector('.player__name2');
-
-var verdict1 = document.querySelector('.player__verdict1');
-var verdict2 = document.querySelector('.player__verdict2');
-
-var appendCardName1 = document.querySelector('.card__name1');
-var appendCardName2 = document.querySelector('.card__name2');
-var appendCardNameWinner = document.querySelector('.card__winner--name');
-
-updateBtn.addEventListener('click', updateRange);
+updateBtn.addEventListener('click', function() {
+  generateMagicNumber();
+  updateRangeText();
+});
 submitBtn.addEventListener('click', function() {
   submitGuess();
   checkAndCompare1();
@@ -55,71 +43,89 @@ resetBtn.addEventListener('click', function() {
   resetGame();
   checkToDisableResetBtn();
 });
+
 clearBtn.addEventListener('click', clearGame);
 
+// Event Listeners to watch for inputs and check whether to disable CLear Game button
 minRange.addEventListener('input', checkToDisableClearBtn);
 maxRange.addEventListener('input', checkToDisableClearBtn);
+guessp1.addEventListener('input', checkToDisableClearBtn);
+guessp2.addEventListener('input', checkToDisableClearBtn);
+player1.addEventListener('input', checkToDisableClearBtn);
+player2.addEventListener('input', checkToDisableClearBtn);
 
-guessInput1.addEventListener('input', function() {
-  checkToDisableClearBtn();
-  // checkRange();
-});
+// Random Number
+function getRandomNumber(minput, maxput) {
+  minput = parseInt(minRange.value);
+  maxput = parseInt(maxRange.value);
+  var random = Math.random() * (maxput - minput + 1) + minput;
+  randomTarget = Math.floor(random);
+}
 
-// guessInput1.addEventListener('onkeypress', checkRange);
+function generateMagicNumber() {
+  minimum = parseInt(minRange.value);
+  maximum = parseInt(maxRange.value);
+  getRandomNumber(minimum, maximum);
+  console.log(randomTarget);
+}
 
-guessInput2.addEventListener('input', checkToDisableClearBtn);
-nameInput1.addEventListener('input', checkToDisableClearBtn);
-nameInput2.addEventListener('input', checkToDisableClearBtn);
-
-// This function takes user range input and updates the current range
-function updateRange() {
-  var minValue = minRange.value;
-  var maxValue = maxRange.value;
-  min.innerText = minValue;
-  max.innerText = maxValue;
+// update text range from minimum and maximum global variables which is from the input user typed in
+function updateRangeText() {
+  min.innerText = minimum;
+  max.innerText = maximum;
 }
 
 // Submit Guess Function -- this updates both current guesses and player names
 function submitGuess() {
-  var ch1Name = nameInput1.value;
-  var ch2Name = nameInput2.value;
-  var ch1Guess = guessInput1.value;
-  var ch2Guess = guessInput2.value;
-  guess1.innerText = ch1Guess;
-  guess2.innerText = ch2Guess;
-  scorecardName1.innerText = ch1Name;
-  scorecardName2.innerText = ch2Name;
+  var ch1Name = player1.value;
+  var ch2Name = player2.value;
+  var ch1Guess = guessp1.value;
+  var ch2Guess = guessp2.value;
+  g1.innerText = ch1Guess;
+  g2.innerText = ch2Guess;
+  p1.innerText = ch1Name;
+  p2.innerText = ch2Name;
+  countRounds = countRounds + 1;
+}
+
+// Set Text to default
+
+function defaultText() {
+  g1.innerText = '0';
+  g2.innerText = '0';
+  p1.innerText = 'Challenger 1 Name';
+  p2.innerText = 'Challenger 2 Name';
+  verdict1.innerText = '';
+  verdict2.innerText = '';
+  minimum = 0;
+  maximum = 0;
 }
 
 // Reset Game = reset button function - use clearGame function plus generate a new number with randomNumber()
 
 function resetGame() {
   clearGame();
-  guess1.innerText = 'Challenger 1 Guess';
-  guess2.innerText = 'Challenger 2 Guess';
-  scorecardName1.innerText = 'Challenger 1 Name';
-  scorecardName2.innerText = 'Challenger 2 Name';
-  verdict1.innerText = 'HIGH/LOW/BOOM';
-  verdict2.innerText = 'HIGH/LOW/BOOM';
-  randomNumber();
+  countRounds = 0;
+  defaultText();
+  updateRangeText();
 }
 
 // Disable reset button if there is nothing to reset
 
 function checkToDisableResetBtn() {
   if (
-    scorecardName1.innerText == 'Challenger 1 Name' &&
-    scorecardName2.innerText == 'Challenger 2 Name' &&
-    guess1.innerText == 'Challenger 1 Guess' &&
-    guess2.innerText == 'Challenger 2 Guess'
+    p1.innerText == 'Challenger 1 Name' &&
+    p2.innerText == 'Challenger 2 Name' &&
+    g1.innerText == '0' &&
+    g2.innerText == '0'
   ) {
     resetBtn.disabled = true;
     resetBtn.classList.add('player__btn--disabled');
   } else if (
-    scorecardName1.innerText !== 'Challenger 1 Name' ||
-    scorecardName2.innerText !== 'Challenger 2 Name' ||
-    guess1.innerText !== 'Challenger 1 Guess' ||
-    guess2.innerText !== 'Challenger 2 Guess'
+    p1.innerText !== 'Challenger 1 Name' ||
+    p2.innerText !== 'Challenger 2 Name' ||
+    g1.innerText !== '0' ||
+    g2.innerText !== '0'
   ) {
     resetBtn.disabled = false;
     resetBtn.classList.remove('player__btn--disabled');
@@ -131,10 +137,10 @@ function checkToDisableResetBtn() {
 function clearGame() {
   minRange.value = '';
   maxRange.value = '';
-  nameInput1.value = '';
-  nameInput2.value = '';
-  guessInput1.value = '';
-  guessInput2.value = '';
+  player1.value = '';
+  player2.value = '';
+  guessp1.value = '';
+  guessp2.value = '';
   checkToDisableClearBtn();
 }
 
@@ -144,20 +150,20 @@ function checkToDisableClearBtn() {
   if (
     minRange.value == '' &&
     maxRange.value == '' &&
-    nameInput1.value == '' &&
-    nameInput2.value == '' &&
-    guessInput1.value == '' &&
-    guessInput2.value == ''
+    player1.value == '' &&
+    player2.value == '' &&
+    guessp1.value == '' &&
+    guessp2.value == ''
   ) {
     clearBtn.disabled = true;
     clearBtn.classList.add('player__btn--disabled');
   } else if (
     minRange.value !== '' ||
     maxRange.value !== '' ||
-    nameInput1.value !== '' ||
-    nameInput2.value !== '' ||
-    guessInput1.value !== '' ||
-    guessInput2.value !== ''
+    player1.value !== '' ||
+    player2.value !== '' ||
+    guessp1.value !== '' ||
+    guessp2.value !== ''
   ) {
     clearBtn.disabled = false;
     clearBtn.classList.remove('player__btn--disabled');
@@ -165,87 +171,60 @@ function checkToDisableClearBtn() {
 }
 
 // function to check and compare guess values
-
 function checkAndCompare1() {
-  var value1 = parseInt(guessInput1.value);
-  var hiddenNumber = parseInt(hiddenNumberX.value);
-  if (value1 > hiddenNumber) {
+  guessValue1 = parseInt(guessp1.value);
+  if (guessValue1 > randomTarget) {
     verdict1.innerText = "That's too high";
-  } else if (value1 < hiddenNumber) {
+  } else if (guessValue1 < randomTarget) {
     verdict1.innerText = "That's too low";
-  } else if (value1 == hiddenNumber) {
+  } else {
     verdict1.innerText = 'BOOM!';
-    passInfoToCard();
+    displayWinner();
   }
 }
 
 function checkAndCompare2() {
-  var value2 = parseInt(guessInput2.value);
-  var hiddenNumber = parseInt(hiddenNumberX.value);
-  if (value2 > hiddenNumber) {
+  guessValue2 = parseInt(guessp2.value);
+  if (guessValue2 > randomTarget) {
     verdict2.innerText = "That's too high";
-  } else if (value2 < hiddenNumber) {
+  } else if (guessValue2 < randomTarget) {
     verdict2.innerText = "That's too low";
-  } else if (value2 == hiddenNumber) {
+  } else {
     verdict2.innerText = 'BOOM!';
-    passInfoToCard();
+    displayWinner();
   }
 }
 
-// pass info to card once there is a winner!
-function passInfoToCard() {
-  var name1 = scorecardName1.innerText;
-  var name2 = scorecardName2.innerText;
-  if (verdict1.innerText == 'BOOM!') {
-    appendCardName1.innerText = name1;
-    appendCardName2.innerText = name2;
-    appendCardNameWinner.innerText = name1;
-  } else if (verdict2.innerText == 'BOOM!') {
-    appendCardName1.innerText = name1;
-    appendCardName2.innerText = name2;
-    appendCardNameWinner.innerText = name2;
-  }
-}
-
-// function checkRange() {
-//   var minInput = parseInt(minRange.value);
-//   var maxInput = parseInt(maxRange.value);
-//   var value1 = parseInt(guessInput1.value);
-//   var value2 = parseInt(guessInput2.value);
-//   if (value1 < minInput) || (value2 < minInput) {
-//     console.log(value1);
-//   } else if (value1 > maxInput) || (value2 > maxInput) {
-
-// }
-
-// Run this on page load -- temporary solution
+// Run button checks on load
 checkToDisableClearBtn();
 checkToDisableResetBtn();
 
-//     minRange.value == '' &&
-//     maxRange.value == '' &&
-//     nameInput1.value == '' &&
-//     nameInput2.value == '' &&
-//     guessInput1.value == '' &&
-//     guessInput2.value == ''
-//   ) {
-//     clearBtn.disabled = true;
-//     clearBtn.classList.add('player__btn--disabled');
-//   } else {
-//     clearBtn.disabled = false;
-//   }
-// }
+// Once the right number has been guessed, then reset round count, increase the max by 10, decrease the min by 10, get a new random number based on the new range, update text display for range
+function uponSuccessfulWin() {
+  countRounds = 0;
+  maximum = maximum + 10;
+  minimum = minimum - 10;
+  getRandomNumber(minimum, maximum);
+  updateRangeText();
 
-// var allInputs = document.getElementsByTagName('input');
-// for (i = 0; i < allInputs.length; i++) {
-//   console.log(allInputs);
-// }
+  // for testing - console log min and max to test minimum and maximum value
+  console.log(minimum);
+  console.log(maximum);
+  // console log random target to have a value (to test guessing it correctly)
+  console.log(randomTarget);
+}
 
-// Input validation alphanumeric -- work in progress
+function displayWinner() {
+  var winnerBoard = document.querySelector('aside');
+  var currentName1 = p1.innerText;
+  var currentName2 = p2.innerText;
+  if (verdict1.innerText == 'BOOM!') {
+    var currentWinner = currentName1;
+  } else if (verdict2.innerText == 'BOOM!') {
+    var currentWinner = currentName2;
+  }
+  var cardHTML = `<section class="card__section"><div class="card__challenger--names"><p class="card__name1" id="challenger1Scoreboard">${currentName1}</p><p class="vs">vs</p><p class="card__name2" id="challenger2Scoreboard">${currentName2}</p></div><div class="card__winner--names"><p class="card__winner--name">${currentWinner}</p><p class="card__winner--text">WINNER</p></div><div class="card__winner--stats"><p class="card__game--stats"><span class="total-guesses">${countRounds}</span> GUESSES</p><p class="card--game-time"><span class="total-time">1.35</span> MINUTES</p><button class="closeBtn" type="button">x</button></div></section>`;
 
-// var inputName = document.querySelector('.player__input--name1');
-// console.log(inputName);
-
-// inputName.oninvalid = function(event) {
-//   event.target.setCustomValidity('invalid');
-// };
+  winnerBoard.insertAdjacentHTML('afterbegin', cardHTML);
+  uponSuccessfulWin();
+}
