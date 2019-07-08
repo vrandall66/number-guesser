@@ -82,7 +82,8 @@ main {
 .player__input--guess2 {
   height: 35px;
   margin-bottom: 20px;
-  width: 200px;
+  width: 150%;
+  /*width: 200px*/;
 }
 
 .double-input {
@@ -90,6 +91,10 @@ main {
   justify-content: space-between;
   margin: 0.25em 0;
   padding: ;
+  width: 87%;
+}
+
+.set-range {
   width: 100%;
 }
 
@@ -169,8 +174,9 @@ h3:after {
 .player__input--name1,
 .player__input--name2 {
   height: 35px;
-  margin-bottom: 20px;
-  width: 400px;
+  margin: 0 20px 20px 0;
+  width: 200%;
+/*  width: 400px;*/
 }
 
 .three-buttons {
@@ -182,9 +188,10 @@ h3:after {
 
 .player__section--titles {
   font-weight: 800;
-  font-size: 125%;
+  font-size: 150%;
   display: flex;
   margin: 0.25rem 0;
+  padding: 10px 0;
 }
 
 /* Players */
