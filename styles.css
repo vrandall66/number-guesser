@@ -83,7 +83,6 @@ main {
   height: 35px;
   margin-bottom: 20px;
   width: 150%;
-  /*width: 200px*/;
 }
 
 .double-input {
@@ -174,9 +173,10 @@ h3:after {
 .player__input--name1,
 .player__input--name2 {
   height: 35px;
+
   margin: 0 20px 20px 0;
   width: 200%;
-/*  width: 400px;*/
+
 }
 
 .three-buttons {
@@ -188,6 +188,7 @@ h3:after {
 
 .player__section--titles {
   font-weight: 800;
+
   font-size: 150%;
   display: flex;
   margin: 0.25rem 0;
@@ -210,10 +211,10 @@ h3:after {
 
 .empty {
   display: flex;
- /* width: 100%;*/
-  justify-content: center:
+/*width: 100%;*/
+/*justify-content: center:
   align-items: center;
-  text-align: center;
+  text-align: center; */
 }
 
 .player1--score,
@@ -291,7 +292,7 @@ aside {
   flex-direction: column;
   align-items: center;
   font-size: 220%;
-  }
+}
 
 .card__winner--name {
   font-weight: 800;
@@ -311,10 +312,10 @@ aside {
 
 .closeBtn {
   display: flex;
-  background-color: #6E6E6E;
-  border: 3px solid #6E6E6E;
+  background-color: #6e6e6e;
+  border: 3px solid #6e6e6e;
   border-radius: 180px;
-  color: #D0D2D3;
+  color: #d0d2d3;
   font-size: 125%;
   justify-content: flex-end;
   padding: 0 9px 2px 9px;
