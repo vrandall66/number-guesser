@@ -1,5 +1,4 @@
 // Global Variables
-
 var randomTarget;
 var minimum;
 var maximum;
