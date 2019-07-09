@@ -324,18 +324,18 @@ aside {
 }
 
 .range-error {
-
+  display: block;
 }
-
-.hidden {
+/* Commenting this out for styling purposes!*/
+/*.hidden {
   visibility: hidden;
-}
+}*/
 
-/*.error--icon {
-  display: hidden;
+.error--icon {
+  display: block;
   height: 15px;
   width: 15px;
-}*/
+}
 
 .error-border {
 border: 3px solid #DD1972;
