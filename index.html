@@ -1,63 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name=“viewport” content=“width=device-width, initial-scale=1" />
-    <title>Number Guesser</title>
-    <link rel="stylesheet" href="styles.css" type="text/css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header>
-      <div class="header-container">
-        <h1 class="header__h1">
-          NUMBER<span class="header__span">GUESSER</span>
-        </h1>
-        <h3 class="header__h3">ULTIMATE CHALLENGER EDITION</h3>
-      </div>
-    </header>
-    <main>
-      <article class="player__article">
-        <section class="player__section--setRange">
-          <p class="player__section--titles">Set Range</p>
-          <div class="double-input set-range">
-            <div class="stack-label-input">
-              <label class="player__label" for="minRange">Min Range</label>
-              <input type="number" class="player__input--min" name="minRange" />
-            </div>
-            <div class="stack-label-input">
-              <label class="player__label" for="maxRange">Max Range</label>
-              <input type="number" class="player__input--max" name="maxRange" />
-            </div>
-            <button class="player__btn update__btn">UPDATE</button>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name=“viewport” content=“width=device-width, initial-scale=1" />
+  <title>Number Guesser</title>
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+  <link
+  href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap"
+  rel="stylesheet"
+  />
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <h1 class="header__h1">
+        NUMBER<span class="header__span">GUESSER</span>
+      </h1>
+      <h3 class="header__h3">ULTIMATE CHALLENGER EDITION</h3>
+    </div>
+  </header>
+  <main>
+    <article class="player__article">
+      <section class="player__section--setRange">
+        <p class="player__section--titles">Set Range</p>
+        <div class="double-input set-range">
+          <div class="stack-label-input">
+            <label class="player__label" for="minRange">Min Range</label>
+            <input type="number" class="player__input--min" name="minRange" />
           </div>
-        </section>
-        <section class="player__section--challengers">
-          <p class="player__section--currentRange">
-            The Current Range is <span class="current-range min">0</span> to
-            <span class="current-range max">0</span>
-          </p>
-          <p class="player__section--titles">Challenger 1</p>
-          <div class="double-input">
-            <div class="stack-label-input">
-              <label class="player__label" for="name1">Name</label>
-              <input type="text" class="player__input--name1" id="name1" />
-            </div>
-            <div class="stack-label-input">
-              <label class="player__label" for="guess1">Guess</label>
-              <input type="number" class="player__input--guess1" id="guess1" />
-            </div>
+          <div class="stack-label-input">
+            <label class="player__label" for="maxRange">Max Range</label>
+            <input type="number" class="player__input--max" name="maxRange" />
           </div>
+          <img src="images/error-icon.svg" class="error--icon hidden">
+          <p class="range-error hidden">Please guess within range</p>
           <button class="player__btn update__btn">UPDATE</button>
         </div>
-       <!--  <div id="min-max-range-error"> -->
-          <img src="images/error-icon.svg" class="error--icon">
-          <p class="range-error hidden">Please guess within range</p>
-        <!-- </div> -->
       </section>
       <section class="player__section--challengers">
         <p class="player__section--currentRange">
@@ -69,63 +48,62 @@
           <div class="stack-label-input">
             <label class="player__label" for="name1">Name</label>
             <input type="text" class="player__input--name1" id="name1" />
-          <p class="player__section--titles">Challenger 2</p>
-          <div class="double-input">
-            <div class="stack-label-input">
-              <label class="player__label" for="name2">Name</label>
-              <input type="text" class="player__input--name2" id="name2" />
-            </div>
-            <div class="stack-label-input">
-              <label class="player__label" for="guess2">Guess</label>
-              <input type="number" class="player__input--guess2" id="guess2" />
-            </div>
           </div>
-          <div class="three-buttons">
-            <button class="player__btn submit__btn" type="button">
-              SUBMIT GUESS
-            </button>
-            <button class="player__btn reset__btn" type="button">
-              RESET GAME
-            </button>
-            <button class="player__btn clear__btn" type="button">
-              CLEAR GAME
-            </button>
+          <div class="stack-label-input">
+            <label class="player__label" for="guess1">Guess</label>
+            <input type="number" class="player__input--guess1" id="guess1" />
           </div>
-          <img src="images/error-icon.svg" class="error--icon">
-          <p id="error-change-later">Please guess within range</p>
+        </div>
         <p class="player__section--titles">Challenger 2</p>
         <div class="double-input">
           <div class="stack-label-input">
             <label class="player__label" for="name2">Name</label>
             <input type="text" class="player__input--name2" id="name2" />
-        </section>
-        <section class="player__section--scores">
-          <p class="player__section--titles">Latest Score</p>
-          <div class="side-by-side-score">
-            <div class="player1--score">
-              <p class="player__name1">Challenger 1 Name</p>
-              <p class="player__currentguess1">current guess</p>
-              <p class="player__guess1">0</p>
-              <p class="player__verdict1">TOO HIGH/LOW</p>
-            </div>
-            <div class="empty"></div>
-            <div class="player2--score">
-              <p class="player__name2">Challenger 2 Name</p>
-              <p class="player__currentguess2">current guess</p>
-              <p class="player__guess2">0</p>
-              <p class="player__verdict2">TOO HIGH/LOW</p>
-            </div>
           </div>
-        </section>
-      </article>
-      <aside></aside>
-    </main>
-    <script
-      src="main.js"
-      type="text/javascript"
-      charset="utf-8"
-      async
-      defer
-    ></script>
-  </body>
+          <div class="stack-label-input">
+            <label class="player__label" for="guess2">Guess</label>
+            <input type="number" class="player__input--guess2" id="guess2" />
+          </div>
+        </div>
+        <div class="three-buttons">
+          <button class="player__btn submit__btn" type="button">
+            SUBMIT GUESS
+          </button>
+          <button class="player__btn reset__btn" type="button">
+            RESET GAME
+          </button>
+          <button class="player__btn clear__btn" type="button">
+            CLEAR GAME
+          </button>
+        </div>
+      </section>
+      <section class="player__section--scores">
+        <p class="player__section--titles">Latest Score</p>
+        <div class="side-by-side-score">
+          <div class="player1--score">
+            <p class="player__name1">Challenger 1 Name</p>
+            <p class="player__currentguess1">current guess</p>
+            <p class="player__guess1">0</p>
+            <p class="player__verdict1">TOO HIGH/LOW</p>
+          </div>
+          <div class="empty"></div>
+          <div class="player2--score">
+            <p class="player__name2">Challenger 2 Name</p>
+            <p class="player__currentguess2">current guess</p>
+            <p class="player__guess2">0</p>
+            <p class="player__verdict2">TOO HIGH/LOW</p>
+          </div>
+        </div>
+      </section>
+    </article>
+    <aside></aside>
+  </main>
+  <script
+  src="main.js"
+  type="text/javascript"
+  charset="utf-8"
+  async
+  defer
+  ></script>
+</body>
 </html>
