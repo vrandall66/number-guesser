@@ -331,11 +331,11 @@ aside {
   visibility: hidden;
 }
 
-/*.error--icon {
+.error--icon {
   display: hidden;
   height: 15px;
   width: 15px;
-}*/
+}
 
 .error-border {
 border: 3px solid #DD1972;

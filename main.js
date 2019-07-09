@@ -243,7 +243,8 @@ function checkRange() {
   // the range is incorrect OR it runs update range if
   // range is correct
   if (parseInt(minRange.value) >= parseInt(maxRange.value)) {
-    rangeError.classList.remove('hidden'); 
+    rangeError.classList.remove('hidden');
+    alertImg.classList.remove('hidden');
 } else {
    updateRange()
   }
@@ -255,6 +256,7 @@ function guessInRange() {
     parseInt(guessp2.value) > parseInt(maxRange.value) ||
     parseInt(guessp2.value) < parseInt(minRange.value)) {
     rangeError.classList.remove('hidden');
+    alertImg.classList.remove('hidden');
   }
 }
 
