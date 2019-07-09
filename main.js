@@ -29,8 +29,7 @@ var clearBtn = document.querySelector('.clear__btn');
 // Event Listeners
 
 updateBtn.addEventListener('click', function() {
-  generateMagicNumber();
-  updateRangeText();
+  checkRange();
 });
 
 submitBtn.addEventListener('click', function() {
@@ -54,25 +53,22 @@ guessp2.addEventListener('input', checkToDisableClearBtn);
 player1.addEventListener('input', checkToDisableClearBtn);
 player2.addEventListener('input', checkToDisableClearBtn);
 
-// Random Number
-function getRandomNumber(minput, maxput) {
-  minput = parseInt(minRange.value);
-  maxput = parseInt(maxRange.value);
-  var random = Math.random() * (maxput - minput + 1) + minput;
-  randomTarget = Math.floor(random);
-}
+// getRandomNumber(1, 100);
 
-function generateMagicNumber() {
-  minimum = parseInt(minRange.value);
-  maximum = parseInt(maxRange.value);
-  getRandomNumber(minimum, maximum);
+// Random Number
+function getRandomNumber(minimum, maximum) {
+  var random = Math.random() * (maximum - minimum + 1) + maximum;
+  randomTarget = Math.floor(random);
   console.log(randomTarget);
 }
 
 // update text range from minimum and maximum global variables which is from the input user typed in
-function updateRangeText() {
-  min.innerText = minimum;
-  max.innerText = maximum;
+function updateRange() {
+  var minput = parseInt(minRange.value);
+  var maxput = parseInt(maxRange.value);
+  min.innerText = minput;
+  max.innerText = maxput;
+  getRandomNumber(minput, maxput)
 }
 
 // Submit Guess Function -- this updates both current guesses and player names
@@ -107,7 +103,8 @@ function resetGame() {
   clearGame();
   countRounds = 0;
   defaultText();
-  updateRangeText();
+  checkRange();
+  // updateRange();
 }
 
 // Disable reset button if there is nothing to reset
@@ -205,12 +202,12 @@ function uponSuccessfulWin() {
   maximum = maximum + 10;
   minimum = minimum - 10;
   getRandomNumber(minimum, maximum);
-  updateRangeText();
+  updateRange();
 
   // for testing - console log min and max to test minimum and maximum value
   console.log(minimum);
-  console.log(maximum);
   // console log random target to have a value (to test guessing it correctly)
+  console.log(maximum);
   console.log(randomTarget);
 }
 
@@ -228,3 +225,43 @@ function displayWinner() {
   winnerBoard.insertAdjacentHTML('afterbegin', cardHTML);
   uponSuccessfulWin();
 }
+
+
+
+
+
+
+
+
+
+var rangeError = document.querySelector('.range-error');
+var alertImg = document.querySelector('.error--icon');
+
+
+function checkRange() {
+  // build this out more so that it shows the error if
+  // the range is incorrect OR it runs update range if
+  // range is correct
+  if (parseInt(minRange.value) >= parseInt(maxRange.value)) {
+    rangeError.classList.remove('hidden'); 
+} else {
+   updateRange()
+  }
+}
+
+function guessInRange() {
+  if (parseInt(guessp1.value) > parseInt(maxRange.value) ||
+    parseInt(guessp1.value) < parseInt(minRange.value) ||
+    parseInt(guessp2.value) > parseInt(maxRange.value) ||
+    parseInt(guessp2.value) < parseInt(minRange.value)) {
+    rangeError.classList.remove('hidden');
+  }
+}
+
+
+
+
+
+
+
+

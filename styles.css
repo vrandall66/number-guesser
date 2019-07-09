@@ -318,6 +318,29 @@ aside {
   padding: 0 9px 2px 9px;
 }
 
+#input-error,
+#error-change-later {
+  display: none;
+}
+
+.range-error {
+
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+/*.error--icon {
+  display: hidden;
+  height: 15px;
+  width: 15px;
+}*/
+
+.error-border {
+border: 3px solid #DD1972;
+}
+
 @media screen and (max-width: 1300px) {
   main {
     display: flex;
