@@ -318,7 +318,6 @@ aside {
   padding: 0 9px 2px 9px;
 }
 
-<<<<<<< HEAD
 #input-error,
 #error-change-later {
   display: none;
@@ -341,7 +340,7 @@ aside {
 .error-border {
 border: 3px solid #DD1972;
 }
-=======
+
 @media screen and (max-width: 1300px) {
   main {
     display: flex;
@@ -419,4 +418,3 @@ border: 3px solid #DD1972;
     width: 100%;
   }
 }
->>>>>>> 3309abc31a66454ef21783253d69539f9a2f0cc7
