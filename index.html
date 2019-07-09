@@ -37,6 +37,10 @@
           </div>
           <button class="player__btn update__btn">UPDATE</button>
         </div>
+       <!--  <div id="min-max-range-error"> -->
+          <img src="images/error-icon.svg" class="error--icon">
+          <p class="range-error hidden">Please guess within range</p>
+        <!-- </div> -->
       </section>
       <section class="player__section--challengers">
         <p class="player__section--currentRange">
@@ -53,7 +57,8 @@
             <label class="player__label" for="guess1">Guess</label>
             <input type="number" class="player__input--guess1" id="guess1" />
           </div>
-        </div>
+          <img src="images/error-icon.svg" class="error--icon">
+          <p id="error-change-later">Please guess within range</p>
         <p class="player__section--titles">Challenger 2</p>
         <div class="double-input">
           <div class="stack-label-input">
