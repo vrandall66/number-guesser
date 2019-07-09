@@ -89,7 +89,6 @@ main {
   display: flex;
   justify-content: space-between;
   margin: 0.25em 0;
-  padding: ;
   width: 87%;
 }
 
@@ -176,7 +175,6 @@ h3:after {
 
   margin: 0 20px 20px 0;
   width: 200%;
-
 }
 
 .three-buttons {
@@ -211,10 +209,6 @@ h3:after {
 
 .empty {
   display: flex;
-/*width: 100%;*/
-/*justify-content: center:
-  align-items: center;
-  text-align: center; */
 }
 
 .player1--score,
@@ -234,6 +228,7 @@ h3:after {
 .player__name1,
 .player__name2 {
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 .player__guess1,
@@ -252,6 +247,7 @@ aside {
   flex-direction: column;
   padding: 20px 40px;
   width: 50%;
+  height: 9999vh;
 }
 
 /* Cards */
@@ -292,12 +288,13 @@ aside {
   flex-direction: column;
   align-items: center;
   font-size: 220%;
+  text-transform: uppercase;
 }
 
 .card__winner--name {
   font-weight: 800;
   padding-top: 25px;
-} 
+}
 
 .card__winner--text {
   font-weight: 300;
@@ -321,6 +318,7 @@ aside {
   padding: 0 9px 2px 9px;
 }
 
+<<<<<<< HEAD
 #input-error,
 #error-change-later {
   display: none;
@@ -343,3 +341,82 @@ aside {
 .error-border {
 border: 3px solid #DD1972;
 }
+=======
+@media screen and (max-width: 1300px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .player__article {
+    width: 100%;
+  }
+
+  .player__input--min,
+  .player__input--max {
+    width: 100%;
+  }
+
+  .player__input--name1,
+  .player__input--name2,
+  .player__input--guess1,
+  .player__input--guess2 {
+    width: 115%;
+  }
+
+  .double-input {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .three-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .player__section--setRange,
+  .player__section--challengers,
+  .player__section--scores {
+    display: flex;
+    width: 100%;
+  }
+
+  .side-by-side-score {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .player1--score {
+    padding-bottom: 20px;
+    border-bottom: 2px solid #d0d2d3;
+  }
+
+  .player2--score {
+    padding-top: 20px;
+  }
+
+  aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #d0d2d3;
+    width: 100%;
+    padding: 20px 20px;
+  }
+
+  .card__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .card__challenger--names,
+  .card__winner--stats {
+    width: 100%;
+  }
+}
+>>>>>>> 3309abc31a66454ef21783253d69539f9a2f0cc7
