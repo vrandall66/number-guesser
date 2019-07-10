@@ -324,15 +324,17 @@ aside {
 }
 
 .range-error {
-  display: block;
+  display: inline-block;
+
 }
 /* Commenting this out for styling purposes!*/
-/*.hidden {
+
+.hidden {
   visibility: hidden;
-}*/
+}
 
 .error--icon {
-  display: block;
+  display: inline-block;
   height: 15px;
   width: 15px;
 }
