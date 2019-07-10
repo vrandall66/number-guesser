@@ -1,46 +1,38 @@
-// Global Variables
-var randomTarget;
-var minimum;
-var maximum;
-var countRounds = 0;
-
-// Other Global Variables
-var minRange = document.querySelector('.player__input--min');
-var maxRange = document.querySelector('.player__input--max');
 var min = document.querySelector('.min');
 var max = document.querySelector('.max');
-var guessp1 = document.querySelector('.player__input--guess1');
-var guessp2 = document.querySelector('.player__input--guess2');
-var g1 = document.querySelector('.player__guess1');
-var g2 = document.querySelector('.player__guess2');
+var minRange = document.querySelector('.player__input--min');
+var maxRange = document.querySelector('.player__input--max');
 var player1 = document.querySelector('.player__input--name1');
 var player2 = document.querySelector('.player__input--name2');
+var guessp1 = document.querySelector('.player__input--guess1');
+var guessp2 = document.querySelector('.player__input--guess2');
 var p1 = document.querySelector('.player__name1');
 var p2 = document.querySelector('.player__name2');
+var g1 = document.querySelector('.player__guess1');
+var g2 = document.querySelector('.player__guess2');
 var verdict1 = document.querySelector('.player__verdict1');
 var verdict2 = document.querySelector('.player__verdict2');
 var guessError1 = document.querySelector('.guess-error-1');
 var guessError2 = document.querySelector('.guess-error-2');
 var alertImg1 = document.querySelector('.error-icon-1');
 var alertImg2 = document.querySelector('.error-icon-2');
-
-// Buttons
 var updateBtn = document.querySelector('.update__btn');
 var submitBtn = document.querySelector('.submit__btn');
 var resetBtn = document.querySelector('.reset__btn');
 var clearBtn = document.querySelector('.clear__btn');
+var alertImg = document.querySelector('.error--icon');
+var rangeError = document.querySelector('.range-error');
+var randomTarget;
+var minimum;
+var maximum;
+var countRounds = 0;
 
-// Run button checks on load
 checkToDisableUpdateBtn();
 checkToDisableClearBtn();
 checkToDisableResetBtn();
 checkToDisableSubmitBtn();
 
-// Event Listeners
-
-updateBtn.addEventListener('click', function() {
-  minMaxEmpty();
-});
+updateBtn.addEventListener('click', minMaxEmpty);
 
 submitBtn.addEventListener('click', function() {
   guessWithinRangeP1();
@@ -49,6 +41,7 @@ submitBtn.addEventListener('click', function() {
   checkAndCompare1();
   checkAndCompare2();
 });
+
 resetBtn.addEventListener('click', function() {
   resetGame();
   checkToDisableResetBtn();
@@ -56,11 +49,11 @@ resetBtn.addEventListener('click', function() {
 
 clearBtn.addEventListener('click', clearGame);
 
-// Event Listeners to watch for inputs and check whether to disable CLear Game button
 minRange.addEventListener('input', function() {
   checkToDisableClearBtn();
   checkToDisableUpdateBtn();
 });
+
 maxRange.addEventListener('input', function() {
   checkToDisableClearBtn();
   checkToDisableUpdateBtn();
@@ -74,17 +67,14 @@ guessp2.addEventListener('input', function() {
   checkToDisableSubmitBtn();
 });
 player1.addEventListener('input', checkToDisableClearBtn);
+
 player2.addEventListener('input', checkToDisableClearBtn);
 
-// Random Number
-
-// getRandomNumber every other round with 2 arguments being passed in
 function getRandomNumber(minput, maxput) {
   var random = Math.random() * (maxput - minput + 1) + minput;
   randomTarget = Math.floor(random);
 }
 
-// getRandom from inputs (convert to number)
 function getRandomFromInputs() {
   minimum = parseInt(document.querySelector('.player__input--min').value);
   maximum = parseInt(document.querySelector('.player__input--max').value);
@@ -93,13 +83,11 @@ function getRandomFromInputs() {
   return randomTarget;
 }
 
-// update text range from minimum and maximum global variables which is from the input user typed in
 function updateRangeText() {
   min.innerText = minimum;
   max.innerText = maximum;
 }
 
-// Submit Guess Function -- this updates both current guesses and player names
 function submitGuess() {
   var ch1Name = player1.value;
   var ch2Name = player2.value;
@@ -111,8 +99,6 @@ function submitGuess() {
   p2.innerText = ch2Name;
   countRounds = countRounds + 1;
 }
-
-// Set Text to default
 
 function defaultText() {
   guessp1.value = '';
@@ -127,8 +113,6 @@ function defaultText() {
   max.innerText = '0';
 }
 
-// Reset Game = reset button function - use clearGame function plus generate a new number with randomNumber()
-
 function resetGame() {
   countRounds = 0;
   defaultText();
@@ -136,20 +120,28 @@ function resetGame() {
   updateRangeText();
 }
 
-// Disable reset button if there is nothing to reset
+function clearGame() {
+  minRange.value = '';
+  maxRange.value = '';
+  player1.value = '';
+  player2.value = '';
+  guessp1.value = '';
+  guessp2.value = '';
+  checkToDisableClearBtn();
+}
 
 function checkToDisableResetBtn() {
   if (
-    p1.innerText == 'Challenger 1 Name' &&
-    p2.innerText == 'Challenger 2 Name' &&
-    g1.innerText == '0' &&
-    g2.innerText == '0'
+    p1.innerText === 'CHALLENGER 1 NAME' &&
+    p2.innerText === 'CHALLENGER 2 NAME' &&
+    g1.innerText === '0' &&
+    g2.innerText === '0'
   ) {
     resetBtn.disabled = true;
     resetBtn.classList.add('player__btn--disabled');
   } else if (
-    p1.innerText !== 'Challenger 1 Name' ||
-    p2.innerText !== 'Challenger 2 Name' ||
+    p1.innerText !== 'CHALLENGER 1 NAME' ||
+    p2.innerText !== 'CHALLENGER 2 NAME' ||
     g1.innerText !== '0' ||
     g2.innerText !== '0'
   ) {
@@ -167,19 +159,6 @@ function checkToDisableUpdateBtn() {
     updateBtn.classList.remove('player__btn--disabled');
   }
 }
-// Clear Game - clear button function - CLEAR ALL input fields but not the range set or the random number generated
-
-function clearGame() {
-  minRange.value = '';
-  maxRange.value = '';
-  player1.value = '';
-  player2.value = '';
-  guessp1.value = '';
-  guessp2.value = '';
-  checkToDisableClearBtn();
-}
-
-// Disable clear button if there is nothing to clear
 
 function checkToDisableClearBtn() {
   if (
@@ -205,7 +184,16 @@ function checkToDisableClearBtn() {
   }
 }
 
-// function to check and compare guess values
+function checkToDisableSubmitBtn() {
+  if (guessp1.value.length === 0 || guessp2.value.length === 0) {
+    submitBtn.disabled = true;
+    submitBtn.classList.add('player__btn--disabled');
+  } else {
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('player__btn--disabled');
+  }
+}
+
 function checkAndCompare1() {
   guessValue1 = parseInt(guessp1.value);
   if (guessValue1 > randomTarget) {
@@ -230,39 +218,6 @@ function checkAndCompare2() {
   }
 }
 
-// Once the right number has been guessed, then reset round count, increase the max by 10, decrease the min by 10, get a new random number based on the new range, update text display for range
-function uponSuccessfulWin() {
-  countRounds = 0;
-  maximum = maximum + 10;
-  minimum = minimum - 10;
-  getRandomNumber(minimum, maximum);
-  updateRangeText();
-
-  // for testing - console log min and max to test minimum and maximum value
-  console.log(minimum);
-  // console log random target to have a value (to test guessing it correctly)
-  console.log(maximum);
-  console.log(randomTarget);
-}
-
-function displayWinner() {
-  var winnerBoard = document.querySelector('aside');
-  var currentName1 = p1.innerText;
-  var currentName2 = p2.innerText;
-  if (verdict1.innerText == 'BOOM!') {
-    var currentWinner = currentName1;
-  } else if (verdict2.innerText == 'BOOM!') {
-    var currentWinner = currentName2;
-  }
-  var cardHTML = `<section class="card__section"><div class="card__challenger--names"><p class="card__name1" id="challenger1Scoreboard">${currentName1}</p><p class="vs">vs</p><p class="card__name2" id="challenger2Scoreboard">${currentName2}</p></div><div class="card__winner--names"><p class="card__winner--name">${currentWinner}</p><p class="card__winner--text">WINNER</p></div><div class="card__winner--stats"><p class="card__game--stats"><span class="total-guesses">${countRounds}</span> GUESSES</p><p class="card--game-time"><span class="total-time">1.35</span> MINUTES</p><button class="closeBtn" type="button">x</button></div></section>`;
-
-  winnerBoard.insertAdjacentHTML('afterbegin', cardHTML);
-  uponSuccessfulWin();
-}
-
-var alertImg = document.querySelector('.error--icon');
-var rangeError = document.querySelector('.range-error');
-
 function minMaxEmpty() {
   if (minRange.value.length === 0 || maxRange.value.length === 0) {
     rangeError.classList.remove('hidden');
@@ -275,10 +230,7 @@ function minMaxEmpty() {
 }
 
 function checkRange() {
-  // build this out more so that it shows the error if
-  // the range is incorrect OR it runs update range if
-  // range is correct
-  if (parseInt(minRange.value) >= parseInt(maxRange.value)) {
+ if (parseInt(minRange.value) >= parseInt(maxRange.value)) {
     rangeError.classList.remove('hidden');
     alertImg.classList.remove('hidden');
   } else {
@@ -317,16 +269,28 @@ function guessWithinRangeP2() {
   }
 }
 
-function checkToDisableSubmitBtn() {
-  if (guessp1.value.length === 0 || guessp2.value.length === 0) {
-    submitBtn.disabled = true;
-    submitBtn.classList.add('player__btn--disabled');
-  } else {
-    submitBtn.disabled = false;
-    submitBtn.classList.remove('player__btn--disabled');
-  }
+function uponSuccessfulWin() {
+  countRounds = 0;
+  maximum = maximum + 10;
+  minimum = minimum - 10;
+  getRandomNumber(minimum, maximum);
+  updateRangeText();
+  console.log(minimum);
+  console.log(maximum);
+  console.log(randomTarget);
 }
 
+function displayWinner() {
+  var winnerBoard = document.querySelector('aside');
+  var currentName1 = p1.innerText;
+  var currentName2 = p2.innerText;
+  if (verdict1.innerText == 'BOOM!') {
+    var currentWinner = currentName1;
+  } else if (verdict2.innerText == 'BOOM!') {
+    var currentWinner = currentName2;
+  }
+  var cardHTML = `<section class="card__section"><div class="card__challenger--names"><p class="card__name1" id="challenger1Scoreboard">${currentName1}</p><p class="vs">vs</p><p class="card__name2" id="challenger2Scoreboard">${currentName2}</p></div><div class="card__winner--names"><p class="card__winner--name">${currentWinner}</p><p class="card__winner--text">WINNER</p></div><div class="card__winner--stats"><p class="card__game--stats"><span class="total-guesses">${countRounds}</span> GUESSES</p><p class="card--game-time"><span class="total-time">1.35</span> MINUTES</p><button class="closeBtn" type="button">x</button></div></section>`;
 
-
-
+  winnerBoard.insertAdjacentHTML('afterbegin', cardHTML);
+  uponSuccessfulWin();
+}
