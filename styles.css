@@ -334,11 +334,7 @@ aside {
 }
 
 .error--icon {
-<<<<<<< HEAD
-  display: hidden;
-=======
   display: inline-block;
->>>>>>> 5199ffea3bbab4a51fb4e1bd681166ef11c9c3bf
   height: 15px;
   width: 15px;
 }
