@@ -41,6 +41,8 @@ submitBtn.addEventListener('click', function() {
   guessWithinRangeP1();
   guessWithinRangeP2();
   checkToDisableResetBtn();
+  checkAndCompare1();
+  checkAndCompare2();
 });
 resetBtn.addEventListener('click', function() {
   resetGame();
@@ -253,8 +255,8 @@ function checkRange() {
 
 function guessWithinRangeP1() {
   if (
-    parseInt(guessp1.value) > parseInt(maxRange.value) ||
-    parseInt(guessp1.value) < parseInt(minRange.value)
+    parseInt(guessp1.value) > parseInt(max.innerText) ||
+    parseInt(guessp1.value) < parseInt(min.innerText)
   ) {
     guessError1.classList.remove('hidden');
     alertImg1.classList.remove('hidden');
@@ -262,14 +264,13 @@ function guessWithinRangeP1() {
     guessError1.classList.add('hidden');
     alertImg1.classList.add('hidden');
     submitGuess();
-    checkAndCompare1();
   }
 }
 
 function guessWithinRangeP2() {
   if (
-    parseInt(guessp2.value) > parseInt(maxRange.value) ||
-    parseInt(guessp2.value) < parseInt(minRange.value)
+    parseInt(guessp2.value) > parseInt(max.innerText) ||
+    parseInt(guessp2.value) < parseInt(min.innerText)
   ) {
     guessError2.classList.remove('hidden');
     alertImg2.classList.remove('hidden');
@@ -277,6 +278,5 @@ function guessWithinRangeP2() {
     guessError2.classList.add('hidden');
     alertImg2.classList.add('hidden');
     submitGuess();
-    checkAndCompare2();
   }
 }
