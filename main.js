@@ -244,11 +244,7 @@ function checkRange() {
   // the range is incorrect OR it runs update range if
   // range is correct
   if (parseInt(minRange.value) >= parseInt(maxRange.value)) {
-<<<<<<< HEAD
-    rangeError.classList.remove('hidden');
-=======
     rangeError.classList.remove('hidden'); 
->>>>>>> 5199ffea3bbab4a51fb4e1bd681166ef11c9c3bf
     alertImg.classList.remove('hidden');
 } else {
   rangeError.classList.add('hidden');
@@ -259,16 +255,9 @@ function checkRange() {
 
 function guessWithinRangeP1() {
   if (parseInt(guessp1.value) > parseInt(maxRange.value) ||
-<<<<<<< HEAD
-    parseInt(guessp1.value) < parseInt(minRange.value) ||
-    parseInt(guessp2.value) > parseInt(maxRange.value) ||
-    parseInt(guessp2.value) < parseInt(minRange.value)) {
-    rangeError.classList.remove('hidden');
-=======
     parseInt(guessp1.value) < parseInt(minRange.value)) {
     var guessError1 = document.querySelector('.guess-error-1');
     guessError1.classList.remove('hidden');
->>>>>>> 5199ffea3bbab4a51fb4e1bd681166ef11c9c3bf
     alertImg.classList.remove('hidden');
   }
 }
