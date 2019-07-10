@@ -258,12 +258,16 @@ function guessWithinRangeP1() {
   if (parseInt(guessp1.value) > parseInt(maxRange.value) ||
     parseInt(guessp1.value) < parseInt(minRange.value)) {
     guessError1.classList.remove('hidden');
+<<<<<<< HEAD
     alertImg1.classList.remove('hidden');
   } else {
     guessError1.classList.add('hidden');
     alertImg1.classList.add('hidden');
     checkAndCompare1();
     submitGuess();
+=======
+    alertImg.classList.remove('hidden');
+>>>>>>> 790d9cdc53cd139903e1972f61637298a429b4c3
   }
 }
 

@@ -330,11 +330,18 @@ aside {
   visibility: hidden;
 }
 
+<<<<<<< HEAD
 .error-img {
   display: inline-block;
   height: 16px;
   margin: 0 10px;
   width: 16px;
+=======
+.error--icon {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+>>>>>>> 790d9cdc53cd139903e1972f61637298a429b4c3
 }
 
 .range-input-error {
