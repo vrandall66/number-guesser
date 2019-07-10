@@ -19,6 +19,10 @@ var p1 = document.querySelector('.player__name1');
 var p2 = document.querySelector('.player__name2');
 var verdict1 = document.querySelector('.player__verdict1');
 var verdict2 = document.querySelector('.player__verdict2');
+var guessError1 = document.querySelector('.guess-error-1');
+var guessError2 = document.querySelector('.guess-error-2');
+var alertImg1 = document.querySelector('.error-icon-1');
+var alertImg2 = document.querySelector('.error-icon-2');
 
 // Buttons
 var updateBtn = document.querySelector('.update__btn');
@@ -35,9 +39,6 @@ updateBtn.addEventListener('click', function() {
 submitBtn.addEventListener('click', function() {
   guessWithinRangeP1();
   guessWithinRangeP2();
-  submitGuess();
-  checkAndCompare1();
-  checkAndCompare2();
   checkToDisableResetBtn();
 });
 resetBtn.addEventListener('click', function() {
@@ -249,25 +250,33 @@ function checkRange() {
 } else {
   rangeError.classList.add('hidden');
   alertImg.classList.add('hidden');
-   updateRange();
+  updateRange();
   }
 }
 
 function guessWithinRangeP1() {
   if (parseInt(guessp1.value) > parseInt(maxRange.value) ||
     parseInt(guessp1.value) < parseInt(minRange.value)) {
-    var guessError1 = document.querySelector('.guess-error-1');
     guessError1.classList.remove('hidden');
-    alertImg.classList.remove('hidden');
+    alertImg1.classList.remove('hidden');
+  } else {
+    guessError1.classList.add('hidden');
+    alertImg1.classList.add('hidden');
+    checkAndCompare1();
+    submitGuess();
   }
 }
 
 function guessWithinRangeP2() {
   if (parseInt(guessp2.value) > parseInt(maxRange.value) ||
     parseInt(guessp2.value) < parseInt(minRange.value)) {
-    var guessError2 = document.querySelector('.guess-error-2');
     guessError2.classList.remove('hidden');
-    alertImg.classList.remove('hidden');
+    alertImg2.classList.remove('hidden');
+  } else {
+    guessError2.classList.add('hidden');
+    alertImg2.classList.add('hidden');
+    checkAndCompare2();
+    submitGuess();
   }
 }
 
