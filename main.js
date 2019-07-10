@@ -30,11 +30,16 @@ var submitBtn = document.querySelector('.submit__btn');
 var resetBtn = document.querySelector('.reset__btn');
 var clearBtn = document.querySelector('.clear__btn');
 
+// Run button checks on load
+checkToDisableUpdateBtn();
+checkToDisableClearBtn();
+checkToDisableResetBtn();
+checkToDisableSubmitBtn();
+
 // Event Listeners
 
 updateBtn.addEventListener('click', function() {
-  getRandomFromInputs();
-  checkRange();
+  minMaxEmpty();
 });
 
 submitBtn.addEventListener('click', function() {
@@ -52,10 +57,22 @@ resetBtn.addEventListener('click', function() {
 clearBtn.addEventListener('click', clearGame);
 
 // Event Listeners to watch for inputs and check whether to disable CLear Game button
-minRange.addEventListener('input', checkToDisableClearBtn);
-maxRange.addEventListener('input', checkToDisableClearBtn);
-guessp1.addEventListener('input', checkToDisableClearBtn);
-guessp2.addEventListener('input', checkToDisableClearBtn);
+minRange.addEventListener('input', function() {
+  checkToDisableClearBtn();
+  checkToDisableUpdateBtn();
+});
+maxRange.addEventListener('input', function() {
+  checkToDisableClearBtn();
+  checkToDisableUpdateBtn();
+});
+guessp1.addEventListener('input', function() {
+  checkToDisableClearBtn();
+  checkToDisableSubmitBtn();
+});
+guessp2.addEventListener('input', function() {
+  checkToDisableClearBtn();
+  checkToDisableSubmitBtn();
+});
 player1.addEventListener('input', checkToDisableClearBtn);
 player2.addEventListener('input', checkToDisableClearBtn);
 
@@ -98,23 +115,25 @@ function submitGuess() {
 // Set Text to default
 
 function defaultText() {
+  guessp1.value = '';
+  guessp2.value = '';
   g1.innerText = '0';
   g2.innerText = '0';
-  p1.innerText = 'Challenger 1 Name';
-  p2.innerText = 'Challenger 2 Name';
   verdict1.innerText = '';
   verdict2.innerText = '';
   minimum = 0;
   maximum = 0;
+  min.innerText = '0';
+  max.innerText = '0';
 }
 
 // Reset Game = reset button function - use clearGame function plus generate a new number with randomNumber()
 
 function resetGame() {
-  clearGame();
   countRounds = 0;
   defaultText();
-  checkRange();
+  getRandomFromInputs();
+  updateRangeText();
 }
 
 // Disable reset button if there is nothing to reset
@@ -139,6 +158,15 @@ function checkToDisableResetBtn() {
   }
 }
 
+function checkToDisableUpdateBtn() {
+  if (minRange.value.length === 0 || maxRange.value.length === 0) {
+    updateBtn.disabled = true;
+    updateBtn.classList.add('player__btn--disabled');
+  } else {
+    updateBtn.disabled = false;
+    updateBtn.classList.remove('player__btn--disabled');
+  }
+}
 // Clear Game - clear button function - CLEAR ALL input fields but not the range set or the random number generated
 
 function clearGame() {
@@ -202,10 +230,6 @@ function checkAndCompare2() {
   }
 }
 
-// Run button checks on load
-checkToDisableClearBtn();
-checkToDisableResetBtn();
-
 // Once the right number has been guessed, then reset round count, increase the max by 10, decrease the min by 10, get a new random number based on the new range, update text display for range
 function uponSuccessfulWin() {
   countRounds = 0;
@@ -239,6 +263,17 @@ function displayWinner() {
 var alertImg = document.querySelector('.error--icon');
 var rangeError = document.querySelector('.range-error');
 
+function minMaxEmpty() {
+  if (minRange.value.length === 0 || maxRange.value.length === 0) {
+    rangeError.classList.remove('hidden');
+    alertImg.classList.remove('hidden');
+  } else {
+    rangeError.classList.add('hidden');
+    alertImg.classList.add('hidden');
+    checkRange();
+  }
+}
+
 function checkRange() {
   // build this out more so that it shows the error if
   // the range is incorrect OR it runs update range if
@@ -249,6 +284,7 @@ function checkRange() {
   } else {
     rangeError.classList.add('hidden');
     alertImg.classList.add('hidden');
+    getRandomFromInputs();
     updateRangeText();
   }
 }
@@ -280,3 +316,17 @@ function guessWithinRangeP2() {
     submitGuess();
   }
 }
+
+function checkToDisableSubmitBtn() {
+  if (guessp1.value.length === 0 || guessp2.value.length === 0) {
+    submitBtn.disabled = true;
+    submitBtn.classList.add('player__btn--disabled');
+  } else {
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('player__btn--disabled');
+  }
+}
+
+
+
+
