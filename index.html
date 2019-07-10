@@ -33,7 +33,7 @@
               <label class="player__label" for="maxRange">Max Range</label>
               <input type="number" class="player__input--max" name="maxRange" />
               <img src="images/error-icon.svg" class="error--icon hidden">
-              <p class="range-error hidden">Please guess within range</p>
+              <p class="range-error hidden">Please re-define range</p>
             </div>
             <button class="player__btn update__btn">UPDATE</button>
           </div>
@@ -54,8 +54,10 @@
               <input type="number" class="player__input--guess1" id="guess1" />
             </div>
           </div>
+          <div class="errorDiv">
           <img src="images/error-icon.svg" class="error--icon hidden">
-          <p class="range-error hidden">Please guess within range</p>
+          <p class="guess-error-1 hidden">Please guess within range</p>
+        </div>
           <p class="player__section--titles">Challenger 2</p>
           <div class="double-input">
             <div class="stack-label-input">
@@ -67,6 +69,10 @@
               <input type="number" class="player__input--guess2" id="guess2" />
             </div>
           </div>
+          <div class="errorDiv">
+          <img src="images/error-icon.svg" class="error--icon hidden">
+          <p class="guess-error-2 hidden">Please guess within range</p>
+        </div>
           <div class="three-buttons">
             <button class="player__btn submit__btn" type="button">
               SUBMIT GUESS
