@@ -81,7 +81,6 @@ main {
 .player__input--guess1,
 .player__input--guess2 {
   height: 35px;
-  margin-bottom: 20px;
   width: 150%;
 }
 
@@ -99,6 +98,7 @@ main {
 .stack-label-input {
   display: flex;
   flex-direction: column;
+  margin-bottom: 0;
 }
 
 .player__article {
@@ -172,8 +172,7 @@ h3:after {
 .player__input--name1,
 .player__input--name2 {
   height: 35px;
-
-  margin: 0 20px 20px 0;
+  margin: 0 20px 0 0;
   width: 200%;
 }
 
@@ -318,13 +317,11 @@ aside {
   padding: 0 9px 2px 9px;
 }
 
-#input-error,
-#error-change-later {
-  display: none;
-}
-
-.range-error {
+.error-text {
   display: inline-block;
+  color: #dd1972;
+  font-size: 90%;
+  margin-bottom: 20px;
 
 }
 /* Commenting this out for styling purposes!*/
@@ -333,14 +330,23 @@ aside {
   visibility: hidden;
 }
 
-.error--icon {
+.error-img {
   display: inline-block;
-  height: 15px;
-  width: 15px;
+  height: 16px;
+  margin: 0 10px;
+  width: 16px;
 }
 
-.error-border {
-border: 3px solid #DD1972;
+.range-input-error {
+  display: flex;
+  margin: 5px 0;
+}
+
+.errorDiv {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.25em 0;
+  width: 97%;
 }
 
 @media screen and (max-width: 1300px) {
@@ -357,6 +363,7 @@ border: 3px solid #DD1972;
   .player__input--min,
   .player__input--max {
     width: 100%;
+    margin-bottom: 20px;
   }
 
   .player__input--name1,
