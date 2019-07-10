@@ -33,6 +33,8 @@ updateBtn.addEventListener('click', function() {
 });
 
 submitBtn.addEventListener('click', function() {
+  guessWithinRangeP1();
+  guessWithinRangeP2();
   submitGuess();
   checkAndCompare1();
   checkAndCompare2();
@@ -233,9 +235,8 @@ function displayWinner() {
 
 
 
-
-var rangeError = document.querySelector('.range-error');
 var alertImg = document.querySelector('.error--icon');
+var rangeError = document.querySelector('.range-error');
 
 
 function checkRange() {
@@ -243,23 +244,43 @@ function checkRange() {
   // the range is incorrect OR it runs update range if
   // range is correct
   if (parseInt(minRange.value) >= parseInt(maxRange.value)) {
+<<<<<<< HEAD
     rangeError.classList.remove('hidden');
+=======
+    rangeError.classList.remove('hidden'); 
+>>>>>>> 5199ffea3bbab4a51fb4e1bd681166ef11c9c3bf
     alertImg.classList.remove('hidden');
 } else {
-   updateRange()
+  rangeError.classList.add('hidden');
+  alertImg.classList.add('hidden');
+   updateRange();
   }
 }
 
-function guessInRange() {
+function guessWithinRangeP1() {
   if (parseInt(guessp1.value) > parseInt(maxRange.value) ||
+<<<<<<< HEAD
     parseInt(guessp1.value) < parseInt(minRange.value) ||
     parseInt(guessp2.value) > parseInt(maxRange.value) ||
     parseInt(guessp2.value) < parseInt(minRange.value)) {
     rangeError.classList.remove('hidden');
+=======
+    parseInt(guessp1.value) < parseInt(minRange.value)) {
+    var guessError1 = document.querySelector('.guess-error-1');
+    guessError1.classList.remove('hidden');
+>>>>>>> 5199ffea3bbab4a51fb4e1bd681166ef11c9c3bf
     alertImg.classList.remove('hidden');
   }
 }
 
+function guessWithinRangeP2() {
+  if (parseInt(guessp2.value) > parseInt(maxRange.value) ||
+    parseInt(guessp2.value) < parseInt(minRange.value)) {
+    var guessError2 = document.querySelector('.guess-error-2');
+    guessError2.classList.remove('hidden');
+    alertImg.classList.remove('hidden');
+  }
+}
 
 
 
