@@ -35,9 +35,9 @@ This was a partner project for Module 1 of the Front-End Engineering program at 
 
 ### 5.1 Provided composition
 
-![Provided static comp for desktop](screenshots/NG Comp Desktop.jpg "Provided static comp for desktop")
+![Provided static comp for desktop](screenshots/NG-Comp-Desktop.jpg "Provided static comp for desktop")
 
-![Provided static comp for mobile](screenshots/NG Mobile Comp.jpg "Provided static comp for mobile")
+![Provided static comp for mobile](screenshots/NG-Mobile-Comp.jpg "Provided static comp for mobile")
 
 ### 5.2 Recreated composition
 
