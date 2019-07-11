@@ -61,7 +61,7 @@ header {
 
 main {
   display: flex;
-  height: 100vh;
+  overflow: none;
   width: 100%;
 }
 
@@ -244,9 +244,9 @@ aside {
   color: #404041;
   display: flex;
   flex-direction: column;
+  overflow: scroll;
   padding: 20px 40px;
   width: 50%;
-  height: 9999vh;
 }
 
 /* Cards */
@@ -349,7 +349,26 @@ aside {
   width: 97%;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1400px) {
+  .player__input--min,
+  .player__input--max {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .player__input--name1,
+  .player__input--name2,
+  .player__input--guess1,
+  .player__input--guess2 {
+    width: 90%;
+  }
+  .player__btn {
+    font-size: 75%;
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
   main {
     display: flex;
     flex-direction: column;
@@ -427,3 +446,61 @@ aside {
     width: 100%;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
