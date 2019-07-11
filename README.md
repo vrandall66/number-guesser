@@ -45,7 +45,7 @@ Desktop:
 
 ![Recreated comp for desktop](screenshots/Errors.png "Recreated comp for desktop 1 of 3")
 
-![Recreated comp for desktop](screenshots/Disabled Buttons.png "Recreated comp for desktop 2 of 3")
+![Recreated comp for desktop](screenshots/Disabled-Buttons.png "Recreated comp for desktop 2 of 3")
 
 ![Recreated comp for desktop](screenshots/Cards.png "Recreated comp for desktop 3 of 3")
 
@@ -53,4 +53,4 @@ Mobile:
 
 ![Recreated comp for mobile 1 of 2](screenshots/Mobile.png "Recreated comp for mobile 1 of 2")
 
-![Recreated comp for mobile 2 of 2](screenshots/Errors Mobile.png "Recreated comp for mobile 2 of 2")
+![Recreated comp for mobile 2 of 2](screenshots/Errors-Mobile.png "Recreated comp for mobile 2 of 2")
